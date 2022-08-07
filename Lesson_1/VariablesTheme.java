@@ -1,20 +1,25 @@
 public class VariablesTheme {
     public static void main(String[] args) {
-        System.out.println("\n1.  Создание переменных и вывод их значений на консоль\n");
-        byte    num   = 5;
-        short   mod   = 6600;
-        int     cores = 4;
-        float   fr    = 3.3f;
-        long    numR  = 77240;
-        double  numP  = 2124709;
-        char    c     = 'i';
-        boolean supp  = true;
+        System.out.println("\n1.  РЎРѕР·РґР°РЅРёРµ РїРµСЂРµРјРµРЅРЅС‹С… Рё РІС‹РІРѕРґ РёС… Р·РЅР°С‡РµРЅРёР№ РЅР° РєРѕРЅСЃРѕР»СЊ\n");
+        byte generation = 10;
+        short efficiency = 300;
+        int cores = 4;
+        float frequency = 3.3f;
+        long ram = 16_777_216;
+        double serialNumber = 2124709.235435;
+        char processorРЎharacteristic = 'H';
+        boolean virtualization = true;
 
-        System.out.println("Core " + c + num + "-" + mod + " " + fr + "Hz / ядер " + cores);
-        System.out.println("Номер региона - " + numP + " / Номер производства - " + numP);
-        System.out.println("Поддержка : " + supp);
+        System.out.println("РџРѕРєРѕР»РµРЅРёРµ РїСЂРѕС†РµСЃСЃРѕСЂР° : " + generation + " РїРѕРєРѕР»РµРЅРёСЏ ");
+        System.out.println("РџСЂРѕРёР·РІРѕРґРёС‚РµР»СЊРЅРѕСЃС‚СЊ : " + efficiency);
+        System.out.println("РЇРґРµСЂ : " + cores);
+        System.out.println("Р§Р°СЃС‚РѕС‚Р° : " + frequency + " Hz");
+        System.out.println("РҐР°СЂР°РєС‚РµСЂРёСЃС‚РёРєР° РїСЂРѕС†РµСЃСЃРѕСЂР° : " + processorРЎharacteristic);
+        System.out.println("РћРїРµСЂР°С‚РёРІРЅР°СЏ РїР°РјСЏС‚СЊ : " + ram + " Р±Р°Р№С‚");
+        System.out.println("РЎРµСЂРёР№РЅС‹Р№ РЅРѕРјРµСЂ : " + serialNumber);
+        System.out.println("Р’РёСЂС‚СѓР°Р»РёР·Р°С†РёСЏ : " + virtualization);
 
-        System.out.println("\n2.  Расчет стоимости товара со скидкой\n");
+        System.out.println("\n2.  Р Р°СЃС‡РµС‚ СЃС‚РѕРёРјРѕСЃС‚Рё С‚РѕРІР°СЂР° СЃРѕ СЃРєРёРґРєРѕР№\n");
         int X = 100;
         int Y = 200;
         float discount = 11;
@@ -22,140 +27,131 @@ public class VariablesTheme {
         float sumDiscount = (X + Y) * discount / 100;
         float totalCost = X + Y - sumDiscount;
 
-        System.out.println("Сумма скидки : " + sumDiscount);
-        System.out.println("Общая стоимость товаров со скидкой : " + totalCost);
+        System.out.println("РЎСѓРјРјР° СЃРєРёРґРєРё : " + sumDiscount);
+        System.out.println("РћР±С‰Р°СЏ СЃС‚РѕРёРјРѕСЃС‚СЊ С‚РѕРІР°СЂРѕРІ СЃРѕ СЃРєРёРґРєРѕР№ : " + totalCost);
 
-        System.out.println("\n3.  Вывод на консоль слова JAVA\n");
+        System.out.println("\n3.  Р’С‹РІРѕРґ РЅР° РєРѕРЅСЃРѕР»СЊ СЃР»РѕРІР° JAVA\n");
         System.out.println("   J    a  v     v  a");
         System.out.println("   J   a a  v   v  a a");
         System.out.println("J  J  aaaaa  V V  aaaaa");
         System.out.println(" JJ  a     a  V  a     a");
 
-        System.out.println("\n4.  Отображение min и max значений числовых типов данных\n");
-        byte        maxByte =  Byte.MAX_VALUE;
-        short       maxShort = Short.MAX_VALUE;
-        int         maxInt =   Integer.MAX_VALUE;
-        long        maxLong =  Long.MAX_VALUE;
+        System.out.println("\n4.  РћС‚РѕР±СЂР°Р¶РµРЅРёРµ min Рё max Р·РЅР°С‡РµРЅРёР№ С‡РёСЃР»РѕРІС‹С… С‚РёРїРѕРІ РґР°РЅРЅС‹С…\n");
+        byte maxByte = Byte.MAX_VALUE;
+        short maxShort = Short.MAX_VALUE;
+        int maxInt = Integer.MAX_VALUE;
+        long maxLong = Long.MAX_VALUE;
 
-        byte  incMaxByte,  decMaxByte;
-        short incMaxShort, decMaxShort;
-        int   incMaxInt,   decMaxInt;
-        long  incMaxLong,  decMaxLong;
-
-        incMaxByte = (byte) (maxByte + 1);
-        decMaxByte = (byte) (incMaxByte - 1);
-
-        incMaxShort = (short) (maxShort + 1);
-        decMaxShort = (short) (incMaxShort - 1);
-
-        incMaxInt = (int) (maxInt + 1);
-        decMaxInt = (int) (incMaxInt - 1);
-
-        incMaxLong = (long) (maxLong + 1);
-        decMaxLong = (long) (incMaxLong - 1);
+        byte incMaxByte = (byte) (maxByte + 1);
+        byte decMaxByte = (byte) (incMaxByte - 1);
+        
+        short incMaxShort = (short) (maxShort + 1);
+        short decMaxShort = (short) (incMaxShort - 1);
+        
+        int incMaxInt = (int) (maxInt + 1);
+        int decMaxInt = (int) (incMaxInt - 1);
+        
+        long incMaxLong = (long) (maxLong + 1);
+        long decMaxLong = (long) (incMaxLong - 1);
 
         System.out.println("Byte    : " + maxByte + " " + incMaxByte + " " + decMaxByte);
         System.out.println("Short   : " + maxShort + " " + incMaxShort + " " + decMaxShort);
         System.out.println("Integer : " + maxInt + " " + incMaxInt + " " + decMaxInt);
         System.out.println("Long    : " + maxLong + " " + incMaxLong + " " + decMaxLong);
 
-        System.out.println("\n5.  Перестановка значений переменных\n");
+        System.out.println("\n5.  РџРµСЂРµСЃС‚Р°РЅРѕРІРєР° Р·РЅР°С‡РµРЅРёР№ РїРµСЂРµРјРµРЅРЅС‹С…\n");
         float a = 3.36f;
         float b = 5.71f;
 
         float tmp;
 
-        System.out.println("С помощью третьей переменной");
-        System.out.println("Исходные значения переменных : \t" + a + " " + b);
+        System.out.println("РЎ РїРѕРјРѕС‰СЊСЋ С‚СЂРµС‚СЊРµР№ РїРµСЂРµРјРµРЅРЅРѕР№");
+        System.out.println("РСЃС…РѕРґРЅС‹Рµ Р·РЅР°С‡РµРЅРёСЏ РїРµСЂРµРјРµРЅРЅС‹С… : " + a + " " + b);
         tmp = a;
         a = b;
         b = tmp;
-        System.out.println("Новые значения переменных : \t" + a + " " + b);
+        System.out.println("РќРѕРІС‹Рµ Р·РЅР°С‡РµРЅРёСЏ РїРµСЂРµРјРµРЅРЅС‹С… : \t" + a + " " + b);
 
-        System.out.println("\nС помощью арифметических операций");
-        System.out.println("Исходные значения переменных : \t" + a + " " + b);
+        System.out.println("\nРЎ РїРѕРјРѕС‰СЊСЋ Р°СЂРёС„РјРµС‚РёС‡РµСЃРєРёС… РѕРїРµСЂР°С†РёР№");
+        System.out.println("РСЃС…РѕРґРЅС‹Рµ Р·РЅР°С‡РµРЅРёСЏ РїРµСЂРµРјРµРЅРЅС‹С… : " + a + " " + b);
         a = ((float) ((long) (a * 10_000) + (long) (b * 10_000))) / 10_000;
         b = ((float) ((long) (a * 10_000) - (long) (b * 10_000))) / 10_000;
         a = ((float) ((long) (a * 10_000) - (long) (b * 10_000))) / 10_000;
-        System.out.println("Новые значения переменных : \t" + a + " " + b);
+        System.out.println("РќРѕРІС‹Рµ Р·РЅР°С‡РµРЅРёСЏ РїРµСЂРµРјРµРЅРЅС‹С… : \t" + a + " " + b);
 
-        System.out.println("\nС помощью побитовой операцией ^");
-        System.out.println("Исходные значения переменных : \t" + a + " " + b);
+        System.out.println("\nРЎ РїРѕРјРѕС‰СЊСЋ РїРѕР±РёС‚РѕРІРѕР№ РѕРїРµСЂР°С†РёРё ^");
+        System.out.println("РСЃС…РѕРґРЅС‹Рµ Р·РЅР°С‡РµРЅРёСЏ РїРµСЂРµРјРµРЅРЅС‹С… : " + a + " " + b);
         a = Float.intBitsToFloat(Float.floatToIntBits(a) ^ Float.floatToIntBits(b));
         b = Float.intBitsToFloat(Float.floatToIntBits(a) ^ Float.floatToIntBits(b));
         a = Float.intBitsToFloat(Float.floatToIntBits(a) ^ Float.floatToIntBits(b));
-        System.out.println("Новые значения переменных : \t" + a + " " + b);
+        System.out.println("РќРѕРІС‹Рµ Р·РЅР°С‡РµРЅРёСЏ РїРµСЂРµРјРµРЅРЅС‹С… : \t" + a + " " + b);
 
-        System.out.println("\n6.  Вывод символов и их кодов\n");
-        int c1 = 35;
-        int c2 = 38;
-        int c3 = 64;
-        int c4 = 94;
-        int c5 = 95;
+        System.out.println("\n6.  Р’С‹РІРѕРґ СЃРёРјРІРѕР»РѕРІ Рё РёС… РєРѕРґРѕРІ\n");
+        int charCode1 = 35;
+        int charCode2 = 38;
+        int charCode3 = 64;
+        int charCode4 = 94;
+        int charCode5 = 95;
 
-        System.out.println(c1 + " " + (char) c1);
-        System.out.println(c2 + " " + (char) c2);
-        System.out.println(c3 + " " + (char) c3);
-        System.out.println(c4 + " " + (char) c4);
-        System.out.println(c5 + " " + (char) c5);
+        System.out.println(charCode1 + " " + (char) charCode1);
+        System.out.println(charCode2 + " " + (char) charCode2);
+        System.out.println(charCode3 + " " + (char) charCode3);
+        System.out.println(charCode4 + " " + (char) charCode4);
+        System.out.println(charCode5 + " " + (char) charCode5);
 
-        System.out.println("\n7.  Произведение и сумма цифр числа");
+        System.out.println("\n7.  РћС‚РѕР±СЂР°Р¶РµРЅРёРµ РєРѕР»РёС‡РµСЃС‚РІР° СЃРѕС‚РµРЅ, РґРµСЃСЏС‚РєРѕРІ Рё РµРґРёРЅРёС† С‡РёСЃР»Р°");
+        int srcN = 123;
+        int digitX = srcN / 100;
+        int digitY = (srcN % 100) / 10;
+        int digitZ = (srcN % 100) % 10;
+
+        System.out.println("\nР§РёСЃР»Рѕ " + srcN + " СЃРѕРґРµСЂР¶РёС‚");
+        System.out.println(digitX + " СЃРѕС‚РµРЅ");
+        System.out.println(digitY + " РґРµСЃСЏС‚РєРѕРІ");
+        System.out.println(digitZ + " РµРґРёРЅРёС†");
+
+        System.out.println("\n8.  Р’С‹РІРѕРґ РЅР° РєРѕРЅСЃРѕР»СЊ ASCII-Р°СЂС‚ Р”СЋРєР°");
+        char cSpace = ' ';
+        char cDiv = '/';
+        char cBackSlash = '\\';
+        char cUnderScore = '_';
+        char cOpenBracket   = '(';
+        char cCloseBracket   = ')';
+
+        System.out.println("\n" + cSpace + cSpace + cSpace + cSpace + cDiv + cBackSlash);
+        System.out.println("" + cSpace + cSpace + cSpace + cDiv + cSpace + cSpace + cBackSlash);
+        System.out.println("" + cSpace + cSpace + cDiv + cUnderScore + cOpenBracket + cSpace + cCloseBracket + cBackSlash);
+        System.out.println("" + cSpace + cDiv + cSpace + cSpace + cSpace + cSpace + cSpace + cSpace + cBackSlash);
+        System.out.println("" + cDiv + cUnderScore + cUnderScore + cUnderScore + cUnderScore + cDiv + cBackSlash + cUnderScore + cUnderScore + cBackSlash);
+
+        System.out.println("\n9.  РџСЂРѕРёР·РІРµРґРµРЅРёРµ Рё СЃСѓРјРјР° С†РёС„СЂ С‡РёСЃР»Р°");
         int N = 345;
 
-        int sumRes  = 0;
-        int compRes = 1;
+        int sumNumbers = 0;
+        int productNumbers = 1;
 
         int tmpN = N;
 
-        sumRes = sumRes + (tmpN % 10);
-        compRes = compRes * (tmpN % 10);
+        sumNumbers = sumNumbers + (tmpN % 10);
+        productNumbers = productNumbers * (tmpN % 10);
 
         tmpN = N / 10;
-        sumRes = sumRes + (tmpN % 10);
-        compRes = compRes * (tmpN % 10);
+        sumNumbers = sumNumbers + (tmpN % 10);
+        productNumbers = productNumbers * (tmpN % 10);
 
         tmpN = N / 10;
-        sumRes = sumRes + (tmpN % 10);
-        compRes = compRes * (tmpN % 10);
+        sumNumbers = sumNumbers + (tmpN % 10);
+        productNumbers = productNumbers * (tmpN % 10);
 
-        System.out.println("\nСумма цифр числа " + N + " = " + sumRes);
-        System.out.println("Произведение цифр числа " + N + " = " + compRes);
+        System.out.println("\nРЎСѓРјРјР° С†РёС„СЂ С‡РёСЃР»Р° " + N + " = " + sumNumbers);
+        System.out.println("РџСЂРѕРёР·РІРµРґРµРЅРёРµ С†РёС„СЂ С‡РёСЃР»Р° " + N + " = " + productNumbers);
 
-        System.out.println("\n8.  Вывод на консоль ASCII-арт Дюка");
-        char cSpace      = ' ';
-        char cDiv        = '/';
-        char cEDiv       = '\\';
-        char cULine      = '_';
-        char cOBracket   = '(';
-        char cCBracket   = ')';
-
-        System.out.println("\n" + cSpace + cSpace + cSpace + cSpace + cDiv + cEDiv);
-        System.out.println("" + cSpace + cSpace + cSpace + cDiv + cSpace + cSpace + cEDiv);
-        System.out.println("" + cSpace + cSpace + cDiv + cULine + cOBracket + cSpace + cCBracket + cEDiv);
-        System.out.println("" + cSpace + cDiv + cSpace + cSpace + cSpace + cSpace + cSpace + cSpace + cEDiv);
-        System.out.println("" + cDiv + cULine + cULine + cULine + cULine + cDiv + cEDiv + cULine + cULine + cEDiv);
-
-        System.out.println("\n9.  Отображение количества сотен, десятков и единиц числа");
-        int srcN = 123;
-        int digitX, digitY, digitZ;
-
-        digitX = srcN / 100;
-        digitY = (srcN % 100) / 10;
-        digitZ = (srcN % 100) % 10;
-
-        System.out.println("\nЧисло " + srcN + " содержит:");
-        System.out.println(digitX + " сотен");
-        System.out.println(digitY + " десятков");
-        System.out.println(digitZ + " единиц");
-
-        System.out.println("\n10. Преобразование секунд");
+        System.out.println("\n10. РџСЂРµРѕР±СЂР°Р·РѕРІР°РЅРёРµ СЃРµРєСѓРЅРґ");
         int seconds = 86399;
 
-        int HH, MM, SS;
-
-        HH = seconds % 24;
-        MM = (seconds / 24) / 60;
-        SS = (seconds / 24) % 60;
+        int HH = seconds % 24;
+        int MM = (seconds / 24) / 60;
+        int SS = (seconds / 24) % 60;;
 
         System.out.println("\n" + HH + ":" + MM + ":" + SS);
     }
