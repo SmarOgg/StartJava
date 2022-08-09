@@ -43,13 +43,13 @@ public class VariablesTheme {
         long maxLong = Long.MAX_VALUE;
 
         System.out.print("Byte    : " + maxByte + " ");
-        System.out.println((byte) (maxByte + 1) + " " + (byte) ((maxByte + 1) - 1));
+        System.out.println((byte) (++ maxByte) + " " + (byte) (-- maxByte));
         System.out.print("Short   : " + maxShort + " ");
-        System.out.println((short) (maxShort + 1) + " " + (short) ((maxShort + 1) - 1));
+        System.out.println((short) (++ maxShort) + " " + (short) (-- maxShort));
         System.out.print("Integer : " + maxInt + " ");
-        System.out.println((int) (maxInt + 1) + " " + (int) ((maxInt + 1) - 1));
+        System.out.println((int) (++ maxInt) + " " + (int) (-- maxInt));
         System.out.print("Long    : " + maxLong + " ");
-        System.out.println((long) (maxLong + 1) + " " + (long) ((maxLong + 1) - 1));
+        System.out.println((long) (++ maxLong) + " " + (long) (-- maxLong));
 
         System.out.println("\n5.  Перестановка значений переменных\n");
         int a = 2;
@@ -73,9 +73,9 @@ public class VariablesTheme {
 
         System.out.println("\nС помощью побитовой операции ^");
         System.out.println("Исходные значения переменных : " + a + " " + b);
-        a = a ^ b;
+        a ^= b;
         b = a ^ b;
-        a = a ^ b;
+        a ^= b;
         System.out.println("Новые значения переменных : \t" + a + " " + b);
 
         System.out.println("\n6.  Вывод символов и их кодов\n");
@@ -113,33 +113,26 @@ public class VariablesTheme {
         System.out.println("\n" + space + space + space + space + slash + backslash);
         System.out.println("" + space + space + space + slash + space + space + backslash);
         System.out.println("" + space + space + slash + underscore + openBracket + space
-            + closeBracket + backslash);
+                + closeBracket + backslash);
         System.out.println("" + space + slash + space + space + space + space + space
-            + space + backslash);
+                + space + backslash);
         System.out.println("" + slash + underscore + underscore + underscore + underscore
-            + slash + backslash + underscore + underscore + backslash);
+                + slash + backslash + underscore + underscore + backslash);
 
         System.out.println("\n9.  Произведение и сумма цифр числа");
-        int srcN = 345;
-
         int sumDigits = 0;
-        int prodDigits = 1;
+        int prodDigits = 0;
 
-        int copySrcN = srcN;
+        srcNum = 345;
+        digitX = srcNum / 100;
+        digitY = (srcNum % 100) / 10;
+        digitZ = srcNum % 10;
+        
+        sumDigits = digitX + digitY + digitZ;
+        prodDigits = digitX * digitY * digitZ;
 
-        sumDigits += (copySrcN % 10);
-        prodDigits *= (copySrcN % 10);
-
-        copySrcN = srcN / 10;
-        sumDigits += (copySrcN % 10);
-        prodDigits *= (copySrcN % 10);
-
-        copySrcN = srcN / 100;
-        sumDigits += (copySrcN % 10);
-        prodDigits *= (copySrcN % 10);
-
-        System.out.println("\nСумма цифр числа " + srcN + " = " + sumDigits);
-        System.out.println("Произведение цифр числа " + srcN + " = " + prodDigits);
+        System.out.println("\nСумма цифр числа " + srcNum + " = " + sumDigits);
+        System.out.println("Произведение цифр числа " + srcNum + " = " + prodDigits);
 
         System.out.println("\n10. Преобразование секунд");
         int seconds = 86399;
