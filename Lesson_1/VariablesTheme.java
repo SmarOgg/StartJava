@@ -43,13 +43,13 @@ public class VariablesTheme {
         long maxLong = Long.MAX_VALUE;
 
         System.out.print("Byte    : " + maxByte + " ");
-        System.out.println((byte) (++ maxByte) + " " + (byte) (-- maxByte));
+        System.out.println((byte) (++maxByte) + " " + (byte) (--maxByte));
         System.out.print("Short   : " + maxShort + " ");
-        System.out.println((short) (++ maxShort) + " " + (short) (-- maxShort));
+        System.out.println((short) (++maxShort) + " " + (short) (--maxShort));
         System.out.print("Integer : " + maxInt + " ");
-        System.out.println((int) (++ maxInt) + " " + (int) (-- maxInt));
+        System.out.println((int) (++maxInt) + " " + (int) (--maxInt));
         System.out.print("Long    : " + maxLong + " ");
-        System.out.println((long) (++ maxLong) + " " + (long) (-- maxLong));
+        System.out.println((long) (++maxLong) + " " + (long) (--maxLong));
 
         System.out.println("\n5.  Перестановка значений переменных\n");
         int a = 2;
