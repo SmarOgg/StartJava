@@ -36,18 +36,14 @@ public class IfElseStatementTheme {
         System.out.println("\n2.  Поиск max и min значений\n");
         int numFirst = 13;
         int numSecond = 130;
-        int max;
-        int min;
 
         if ( numFirst > numSecond) {
             System.out.println("Сравнение чисел: " + numFirst + " и " + numSecond + 
                     ", где max - " + numFirst + ", min - " + numSecond);
-        }
-        if (numFirst < numSecond) {
+        } else if (numFirst < numSecond) {
             System.out.println("Сравнение чисел: " + numFirst + " и " + numSecond + 
                     ", где max - " + numSecond + ", min - " + numFirst);
-        }
-        if (numFirst == numSecond) {
+        } else if (numFirst == numSecond) {
             System.out.println("Сравнение чисел " + numFirst + " и " + numSecond + 
                     ", они равны");
         }
@@ -71,52 +67,46 @@ public class IfElseStatementTheme {
         }
 
         System.out.println("\n4.  Поиск одинаковых цифр в числах\n");
-        boolean hundred = false;
-        boolean ten = false;
-        boolean one = false;
+        boolean numNothing = false;
 
-        numFirst = 222;
-        numSecond = 222;
+        int num1 = 123;
+        int num2 = 231;
 
-        int numFirstHundred = numFirst / 100;
-        int numSecondHundred = numSecond / 100;
-        int numFirstTen = (numFirst / 10) % 10;
-        int numSecondTen = (numSecond / 10) % 10;
-        int numFirstOne = numFirst % 10;
-        int numSecondOne = numSecond % 10;
+        int num1Hundred = num1 / 100;
+        int num2Hundred = num2 / 100;
+        int num1Ten = (num1 / 10) % 10;
+        int num2Ten = (num2 / 10) % 10;
+        int num1One = num1 % 10;
+        int num2One = num2 % 10;
 
-        System.out.println("Исходные числа: " + numFirst + " " + numSecond);
+        System.out.println("Исходные числа: " + num1 + " " + num2);
         
-        if (numFirstHundred == numSecondHundred) {
-            hundred = true;
-        }
-        if (numFirstTen == numSecondTen) {
-            ten = true;
-        }
-        if (numFirstOne == numSecondOne) {
-            one = true;
+        if (num1Hundred != num2Hundred && 
+                num1Ten != num2Ten &&
+                num1One != num2One) {
+            numNothing = true;
         }
 
-        if (hundred || ten || one) {
+        if (!numNothing) {
             System.out.print("Одинаковые в них числа:");
-            if (hundred) {
-                System.out.print(" " + numFirstHundred);
+            if (num1Hundred == num2Hundred) {
+                System.out.print(" " + num1Hundred);
             }
-            if (ten) {
-                System.out.print(" " + numFirstTen);
+            if (num1Ten == num2Ten) {
+                System.out.print(" " + num1Ten);
             }
-            if (one) {
-                System.out.print(" " + numFirstOne);
+            if (num1One == num2One) {
+                System.out.print(" " + num1One);
             }
 
             System.out.print("\nНомера разрядов: ");
-            if (hundred) {
+            if (num1Hundred == num2Hundred) {
                 System.out.print(" сотни");
             }
-            if (ten) {
+            if (num1Ten == num2Ten) {
                 System.out.print(" десятки");
             }
-            if (one) {
+            if (num1One == num2One) {
                 System.out.print(" единицы");
             }
         } else {
@@ -190,20 +180,21 @@ public class IfElseStatementTheme {
         int profitPerYear = 12 * (salePerMonth - rentPerMonth - costPrice);
 
         if (profitPerYear > 0) {
-            System.out.println("Прибыль за год: " + "+" + profitPerYear);
+            System.out.println("Прибыль за год: +" + profitPerYear);
         } else {
             System.out.println("Прибыль за год: " + profitPerYear);
         }
         
         System.out.println("\n9.  Подсчет количества банкнот\n");
         int withdrawAmount = 567;
+        int moneyRemainTen = 5;
         int srcHundred = withdrawAmount / 100;
         int srcTen = (withdrawAmount / 10) % 10;
         int srcOne = withdrawAmount % 10;
 
-        if (srcTen > 5) {
-            srcOne += (srcTen - 5) * 10;
-            srcTen = 5;
+        if (srcTen > moneyRemainTen) {
+            srcOne += (srcTen - moneyRemainTen) * 10;
+            srcTen = moneyRemainTen;
         }
 
         System.out.print("Номиналы банкнот(требуемое количество): " + 
