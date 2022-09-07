@@ -209,9 +209,20 @@ public class CyclesTheme {
 
         System.out.println("\n10. Вывод таблицы умножения Пифагора\n");
         
-        System.out.printf("ТАБЛИЦА ПИФАГОРА%n");
-        System.out.print(" ");
+        System.out.printf("%20s%n","ТАБЛИЦА ПИФАГОРА");
+        
+        System.out.print(" |");
+
         for ( i = 2; i <= 9 ; i++ ) {
+            System.out.printf("%3d", i);
+        }
+        System.out.println();
+        for ( i = 1; i <= 26 ; i++ ) {
+            System.out.print("-");
+        }
+        System.out.println();
+        for ( i = 2; i <= 9 ; i++ ) {
+            System.out.printf("%d%s",i,"|");
             for ( j = 2; j <= 9 ; j++ ) {
                 System.out.printf("%3d", i * j);
             }
