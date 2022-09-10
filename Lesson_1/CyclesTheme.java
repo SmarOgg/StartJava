@@ -64,20 +64,18 @@ public class CyclesTheme {
         }
 
         System.out.println("\n4.  Вывод чисел на консоль в несколько строк\n");
-        int numsInRow = 5;
-        int j = 0;
-        int b = 24;
+        int numsInRow = 0;
 
-        for (int i = 1; i < b; i += 2, j++) {
-            if (j == numsInRow) {
+        for (int i = 1; i < 24; i += 2, numsInRow++) {
+            if (numsInRow == 5) {
                 System.out.println();
-                j = 0;
+                numsInRow = 0;
             }
             System.out.printf("%5d", i);
         }
 
-        if (j != numsInRow) {
-            for (int i = 0; i < (numsInRow - j); i++) {
+        if (numsInRow != 5) {
+            for (int i = 0; i < (5 - numsInRow); i++) {
                 System.out.printf("%5d", 0);
             }
         }
@@ -101,38 +99,36 @@ public class CyclesTheme {
         }
 
         System.out.println("\n\n6.  Отображение фигур в консоли\n");
-        char star = '*';
-        char grid = '#';
-        char dollar = '$';
-        int sideRectangleA = 10;
-        int sideRectangleB = 5;
+        int numCharsPerLine = 10;
+        int numOfRows = 5;
+        int j;
 
-        for (int i = 0; i < sideRectangleB; i++) {
-            for (j = 0; j < sideRectangleA; j++) {
-                System.out.print(star);
+        for (int i = 0; i < numOfRows; i++) {
+            for (j = 0; j < numCharsPerLine; j++) {
+                System.out.print("*");
             }
             System.out.println();
         }
 
         System.out.println();
-        int sideTriangelA = 5;
-        int sideTriangelB = 5;
+        int startNumCharsPerLine = 5;
+        numOfRows = 5;
 
         int i = 0;
         j = 0;
-        while (j < sideTriangelA) {
-            while (i < sideTriangelB) {
-                System.out.print(grid);
+        while (j < startNumCharsPerLine) {
+            while (i < numOfRows) {
+                System.out.print("#");
                 ++i;
             }
             ++j;
             System.out.println();
-            sideTriangelB--;
+            numOfRows--;
             i = 0;
         }
 
         System.out.println();
-        int hypotenuse = 5;
+        numOfRows = 5;
         int height = 3;
         int space = height - 1;
 
@@ -140,60 +136,59 @@ public class CyclesTheme {
         do {
             j = 0;
             do {
-                System.out.print(dollar);
+                System.out.print("$");
                 j++;
             } while (((space >= 0 ? space : -space) + j) != height);
             i++;
             space--;
             System.out.println();
-        } while (i <= hypotenuse);
+        } while (i <= numOfRows);
 
         System.out.println("\n7.  Отображение ASCII-символов\n");
         System.out.printf("%6s%6s%n", "Dec", "Char");
-        for (i = 0; i < (int) '0' ; i++) {
+        for (i = 0; i < '0' ; i++) {
             if ((i % 2) != 0) {
-                System.out.printf("%6s%6s\n", i, (char) i);
+                System.out.printf("%6d%6s\n", i, (char) i);
             }
         }
 
-        for (i = (int) 'a'; i <= (int) 'z' ; i++) {
+        for (i = 'a'; i <= 'z' ; i++) {
             if (i % 2 == 0) {
-                System.out.printf("%6s%6s\n", i, (char) i);
+                System.out.printf("%6d%6s\n", i, (char) i);
             }
         }
 
-        System.out.println("\n7.  Проверка, является ли число палиндромом\n");
-        num = 1234321;
-        srcNum = num;
+        System.out.println("\n8.  Проверка, является ли число палиндромом\n");
+        srcNum = 123321;
+        int srcCopyNum = srcNum;
         int reverseNum = 0;
 
-        for (; num > 0 ; ) {
-            reverseNum = reverseNum * 10 + num % 10;
-            num /= 10;
+        while (srcNum > 0) {
+            reverseNum = reverseNum * 10 + srcNum % 10;
+            srcNum /= 10;
         }
 
-        if (srcNum == reverseNum) {
-            System.out.printf("Число %d является палиндромом%n", srcNum);
+        if (srcCopyNum == reverseNum) {
+            System.out.printf("Число %d является палиндромом%n", srcCopyNum);
         } else {
-            System.out.printf("Число %d не является палиндромом%n", srcNum);
+            System.out.printf("Число %d не является палиндромом%n", srcCopyNum);
         }
 
-        System.out.println("\n8.  Определение, является ли число счастливым");
+        System.out.println("\n9.  Определение, является ли число счастливым");
         num = 123223;
         int firstTriple = 0;
         int secondTriple = 0;
         int sumFirstTriple = 0;
         int sumSecondTriple = 0;
 
-        for (i =0 ; i < 3 ; i++) {
-            firstTriple = firstTriple * 10 + num % 10;
-            sumFirstTriple += num % 10;
-            num /= 10;
-        }
-
-        for (i = 3 ; i < 6 ; i++) {
-            secondTriple = secondTriple * 10 + num % 10;
-            sumSecondTriple += num % 10;
+        for (i = 0 ; i < 6; i++) {
+            if (i< 3) {
+                firstTriple = firstTriple * 10 + num % 10;
+                sumFirstTriple += num % 10;
+            } else {
+                secondTriple = secondTriple * 10 + num % 10;
+                sumSecondTriple += num % 10;
+            }
             num /= 10;
         }
 
