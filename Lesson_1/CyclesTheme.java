@@ -175,22 +175,24 @@ public class CyclesTheme {
         }
 
         System.out.println("\n9.  Определение, является ли число счастливым");
-        num = 123223;
+        num = 123321;
         int firstTriple = 0;
         int secondTriple = 0;
         int sumFirstTriple = 0;
         int sumSecondTriple = 0;
 
-        for (i = 0 ; i < 6; i++) {
-            if (i< 3) {
-                firstTriple = firstTriple * 10 + num % 10;
-                sumFirstTriple += num % 10;
-            } else {
-                secondTriple = secondTriple * 10 + num % 10;
-                sumSecondTriple += num % 10;
-            }
-            num /= 10;
+        firstTriple = num / 1000;
+        secondTriple = num % 1000;
+
+        for ( i = 0; i < 3; i++) {
+            sumFirstTriple += firstTriple % 10;
+            firstTriple /= 10;
+            sumSecondTriple += secondTriple % 10;
+            secondTriple /= 10;
         }
+
+        firstTriple = num / 1000;
+        secondTriple = num % 1000;
 
         System.out.printf("Сумма цифр %d = %d%n", firstTriple, sumFirstTriple);
         System.out.printf("Сумма цифр %d = %d%n", secondTriple, sumSecondTriple);
@@ -203,20 +205,19 @@ public class CyclesTheme {
         System.out.println("\n10. Вывод таблицы умножения Пифагора\n");
         
         System.out.printf("%20s%n","ТАБЛИЦА ПИФАГОРА");
-        
         System.out.print(" |");
 
-        for ( i = 2; i <= 9 ; i++ ) {
+        for ( i = 2; i <= 9; i++ ) {
             System.out.printf("%3d", i);
         }
         System.out.println();
-        for ( i = 1; i <= 26 ; i++ ) {
+        for ( i = 1; i <= 26; i++ ) {
             System.out.print("-");
         }
         System.out.println();
-        for ( i = 2; i <= 9 ; i++ ) {
+        for ( i = 2; i <= 9; i++ ) {
             System.out.printf("%d%s",i,"|");
-            for ( j = 2; j <= 9 ; j++ ) {
+            for ( j = 2; j <= 9; j++ ) {
                 System.out.printf("%3d", i * j);
             }
             System.out.println();
