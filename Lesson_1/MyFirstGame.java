@@ -1,20 +1,20 @@
 public class MyFirstGame {
     public static void main(String[] args) {
-        int halfIntervalStart = 0;
-        int halfIntervalEnd = 100;
+        int startRange = 0;
+        int endRange = 100;
 
         int numHidden = 23;
-        int numPlayer = halfIntervalEnd;
+        int numPlayer = endRange;
 
         while (numPlayer != numHidden) {
-            numPlayer = halfIntervalStart + (halfIntervalEnd - halfIntervalStart) / 2;
+            numPlayer = startRange + (endRange - startRange) / 2;
 
             if (numPlayer > numHidden) {
                 System.out.println("Число " + numPlayer + " больше того, что загадал компьютер");
-                halfIntervalEnd = numPlayer;
+                endRange = numPlayer;
             } else if (numPlayer < numHidden) {
                 System.out.println("Число " + numPlayer + " меньше того, что загадал компьютер");
-                halfIntervalStart = numPlayer;
+                startRange = numPlayer;
             }
         }
 
