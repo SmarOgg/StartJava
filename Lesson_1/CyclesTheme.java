@@ -176,21 +176,18 @@ public class CyclesTheme {
 
         System.out.println("\n9.  Определение, является ли число счастливым");
         num = 123321;
-        int firstTriple = 0;
-        int secondTriple = 0;
+        int firstTriple = num / 1000;
+        int secondTriple = num % 1000;
         int sumFirstTriple = 0;
         int sumSecondTriple = 0;
 
-        firstTriple = num / 1000;
-        secondTriple = num % 1000;
-
-        for ( i = 0; i < 3; i++) {
+        while (secondTriple > 0) {
             sumFirstTriple += firstTriple % 10;
             firstTriple /= 10;
             sumSecondTriple += secondTriple % 10;
             secondTriple /= 10;
         }
-
+        
         firstTriple = num / 1000;
         secondTriple = num % 1000;
 
