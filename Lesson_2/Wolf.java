@@ -25,6 +25,4 @@ public class Wolf {
         System.out.println("Охотится");
     }
 
-    public Wolf() {}
-
 }
