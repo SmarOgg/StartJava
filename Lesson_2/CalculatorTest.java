@@ -2,8 +2,11 @@ import java.util.Scanner;
 
 public class CalculatorTest {
     public static void main(String[] args) {
+        boolean answerNo = false;
+        boolean answerYes = false;
+
         Calculator calc = new Calculator();
-        Scanner input = new Scanner(System.in);
+        Scanner input = new Scanner(System.in);;
         
         do {
             System.out.print("Введите первое число: ");
@@ -14,9 +17,22 @@ public class CalculatorTest {
             calc.setB(input.nextInt());
 
             System.out.println(calc.getA() + " " + calc.getSign() + " " + calc.getB() 
-                    + " = " + calc.getResult());
-            
-            System.out.print("Хотите продолжить вычисления? [yes/no]: ");
-        } while(!input.nextLine().equals("no"));
+                    + " = " + calc.calculate());
+
+            do {
+                System.out.print("Хотите продолжить вычисления? [yes/no]: ");
+                String answer=input.next();
+                switch (answer) {
+                    case "yes":
+                        answerYes = true;
+                        break;
+                    case "no":
+                        answerNo = true;
+                        break;
+                }
+            } while (!(answerYes ^ answerNo));
+
+            answerYes = false;
+        } while (!answerNo);
     }
 }
