@@ -2,8 +2,7 @@ import java.util.Scanner;
 
 public class CalculatorTest {
     public static void main(String[] args) {
-        boolean answerNo = false;
-        boolean answerYes = false;
+        String answer;
 
         Calculator calc = new Calculator();
         Scanner input = new Scanner(System.in);;
@@ -21,18 +20,9 @@ public class CalculatorTest {
 
             do {
                 System.out.print("Хотите продолжить вычисления? [yes/no]: ");
-                String answer=input.next();
-                switch (answer) {
-                    case "yes":
-                        answerYes = true;
-                        break;
-                    case "no":
-                        answerNo = true;
-                        break;
-                }
-            } while (!(answerYes ^ answerNo));
+                answer=input.next();
+            } while (!(answer.equals("yes") ^ answer.equals("no")));
 
-            answerYes = false;
-        } while (!answerNo);
+        } while (!answer.equals("no"));
     }
 }
