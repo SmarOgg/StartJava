@@ -20,9 +20,8 @@ public class CalculatorTest {
 
             do {
                 System.out.print("Хотите продолжить вычисления? [yes/no]: ");
-                answer=input.next();
-            } while (!(answer.equals("yes") ^ answer.equals("no")));
-
+                answer = input.next();
+            } while (!answer.equals("yes") && !answer.equals("no"));
         } while (!answer.equals("no"));
     }
 }
