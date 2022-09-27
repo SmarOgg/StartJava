@@ -8,6 +8,19 @@ public class Jaeger {
     private int strength;
     private int armor;
 
+    public Jaeger() {}
+
+    public Jaeger(String modelName, String mark, String origin, float height, float weight, 
+            int strength, int armor) {
+        this.modelName = modelName;
+        this.mark = mark;
+        this.origin = origin;
+        this.height = height;
+        this.weight = weight;
+        this.strength = strength;
+        this.armor = armor;
+    }
+
     public void setModelname(String modelName) {
         this.modelName = modelName;
     }
@@ -78,15 +91,5 @@ public class Jaeger {
 
     void useVortexCannon() {
         System.out.println("activated");
-    }
-
-    public Jaeger() {
-        modelName = "Cherno Alpha";
-        mark = "Mark-1";
-        origin = "Russia";
-        height = 85.34f;
-        weight = 2.412f;
-        strength = 10;
-        armor = 10;
     }
 }

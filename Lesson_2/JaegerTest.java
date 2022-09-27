@@ -2,7 +2,7 @@ public class JaegerTest {
     
     public static void main(String[] args) {
         Jaeger strikerEureka = new Jaeger();
-        Jaeger chernoAlpha = new Jaeger();
+        Jaeger chernoAlpha = new Jaeger("Cherno Alpha", "Mark-1", "Russia", 85.34f, 2.412f, 10, 10);
 
         strikerEureka.setModelname("Striker Eureka");
         strikerEureka.setMark("Mark-5");
