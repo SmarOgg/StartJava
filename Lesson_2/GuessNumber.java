@@ -1,31 +1,16 @@
 import java.util.Scanner;
 
 public class GuessNumber {
-    int hiddenNum;
-    int startRange = 0;
-    int endRange = 100;
-    Player player1;
-    Player player2;
-    Player firstPlayer;
-    boolean isGuessed;
-    int playerNum;
+    private int hiddenNum;
+    private int startRange = 0;
+    private int endRange = 100;
+    private Player player1;
+    private Player player2;
+    private Player currentPlayer;
 
-    public GuessNumber (Player player1, Player player2) {
+    public GuessNumber(Player player1, Player player2) {
         this.player1 = player1;
         this.player2 = player2;
-    }
-
-    private void init() {
-        int numPlayer = (int) (Math.random());
-        
-        hiddenNum = randomNumber();
-        if (numPlayer == 0) {
-            firstPlayer = player1;
-        } else {
-            firstPlayer = player2;
-        }
-
-        isGuessed = false;
     }
 
     public void start() {
@@ -33,18 +18,27 @@ public class GuessNumber {
         Scanner input = new Scanner(System.in);
 
         do {
-            System.out.print("Ход игрока " + firstPlayer.getName() + " : ");
-            playerNum = input.nextInt();
-            if (playerNum > hiddenNum) {
-                System.out.println("Число " + playerNum + " больше того, что загадал компьютер");
+            System.out.print("Ход игрока " + currentPlayer.getName() + " : ");
+            currentPlayer.setPlayerNum(input.nextInt());
+            if (currentPlayer.getPlayerNum() > hiddenNum) {
+                System.out.println("Число " + currentPlayer.getPlayerNum() + " больше того, что загадал компьютер");
                 changeFirstPlayer();
-            } else if (playerNum < hiddenNum) {
-                System.out.println("Число " + playerNum + " меньше того, что загадал компьютер");
+            } else if (currentPlayer.getPlayerNum() < hiddenNum) {
+                System.out.println("Число " + currentPlayer.getPlayerNum() + " меньше того, что загадал компьютер");
                 changeFirstPlayer();
-            } else {
-                isGuessed = true;
             }
-        } while (!isGuessed);
+        } while (currentPlayer.getPlayerNum() != hiddenNum);
+    }
+
+    private void init() {
+        int numPlayer = (int) (Math.random());
+        
+        hiddenNum = randomNumber();
+        if (numPlayer == 0) {
+            currentPlayer = player1;
+        } else {
+            currentPlayer = player2;
+        }
     }
 
     private int randomNumber() {
@@ -52,10 +46,6 @@ public class GuessNumber {
     }
 
     private void changeFirstPlayer() {
-        if (firstPlayer == player1) {
-            firstPlayer = player2;
-        } else {
-            firstPlayer = player1;
-        }
+        currentPlayer = currentPlayer == player1 ? player2 : player1;
     }
 }
