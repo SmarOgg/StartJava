@@ -19,33 +19,25 @@ public class GuessNumber {
 
         do {
             System.out.print("Ход игрока " + currentPlayer.getName() + " : ");
-            currentPlayer.setPlayerNum(input.nextInt());
-            if (currentPlayer.getPlayerNum() > hiddenNum) {
-                System.out.println("Число " + currentPlayer.getPlayerNum() + " больше того, что загадал компьютер");
-                changeFirstPlayer();
-            } else if (currentPlayer.getPlayerNum() < hiddenNum) {
-                System.out.println("Число " + currentPlayer.getPlayerNum() + " меньше того, что загадал компьютер");
-                changeFirstPlayer();
+            currentPlayer.setNumber(input.nextInt());
+            if (currentPlayer.getNumber() > hiddenNum) {
+                System.out.println("Число " + currentPlayer.getNumber() + " больше того, что загадал компьютер");
+            } else if (currentPlayer.getNumber() < hiddenNum) {
+                System.out.println("Число " + currentPlayer.getNumber() + " меньше того, что загадал компьютер");
+            } else {
+                break;
             }
-        } while (currentPlayer.getPlayerNum() != hiddenNum);
+            changePlayer();
+        } while (true);
     }
 
     private void init() {
         int numPlayer = (int) (Math.random());
-        
-        hiddenNum = randomNumber();
-        if (numPlayer == 0) {
-            currentPlayer = player1;
-        } else {
-            currentPlayer = player2;
-        }
+        hiddenNum = (int) (Math.random() * endRange) + 1;
+        currentPlayer = numPlayer == 0 ? player1 : player2;
     }
 
-    private int randomNumber() {
-        return (int) (Math.random() * endRange) + 1;
-    }
-
-    private void changeFirstPlayer() {
+    private void changePlayer() {
         currentPlayer = currentPlayer == player1 ? player2 : player1;
     }
 }
