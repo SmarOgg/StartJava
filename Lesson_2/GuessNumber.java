@@ -2,7 +2,6 @@ import java.util.Scanner;
 
 public class GuessNumber {
     private int hiddenNum;
-    private int startRange = 0;
     private int endRange = 100;
     private Player player1;
     private Player player2;
@@ -32,9 +31,8 @@ public class GuessNumber {
     }
 
     private void init() {
-        int numPlayer = (int) (Math.random());
         hiddenNum = (int) (Math.random() * endRange) + 1;
-        currentPlayer = numPlayer == 0 ? player1 : player2;
+        changePlayer();
     }
 
     private void changePlayer() {
