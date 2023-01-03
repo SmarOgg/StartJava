@@ -1,3 +1,5 @@
+package com.startjava.lesson_2_3_4.array;
+
 public class ArrayTheme {
     public static void main(String[] args) {
         System.out.println("1. Реверс значений массива");
@@ -24,11 +26,11 @@ public class ArrayTheme {
             intArray[i] = i;
             result *= (i == 0 || i == 9) ? 1 : intArray[i];
             System.out.print((i == 0 || i == 9) ?
-                    "index[" + i +"] = " + intArray[i] + " " : "");
-            }
+                    "index[" + i + "] = " + intArray[i] + " " : "");
+        }
         System.out.println();
         for (int i = 0; i < len; i++) {
-            System.out.print((i == 0 || i == 9) ? 
+            System.out.print((i == 0 || i == 9) ?
                     "" : intArray[i] + ((i >= 1 && i < 8) ? " * " : " = " + result));
         }
 
@@ -36,13 +38,13 @@ public class ArrayTheme {
         float[] srcFloatArray = new float[15];
         len = srcFloatArray.length;
 
-        for (int i = 0; i < len; srcFloatArray[i++] = (float) Math.random() * 100);
-        
+        for (int i = 0; i < len; srcFloatArray[i++] = (float) Math.random() * 100) ;
+
         int midIndex = len / 2;
         float[] newFloatArray = new float[len];
-        
+
         for (int i = 0; i < len; i++) {
-            newFloatArray[i] = (srcFloatArray[i] > srcFloatArray[midIndex]) ? 
+            newFloatArray[i] = (srcFloatArray[i] > srcFloatArray[midIndex]) ?
                     0.0f : srcFloatArray[i];
         }
         System.out.println("Исходный массив :");
@@ -52,7 +54,7 @@ public class ArrayTheme {
         printArray(newFloatArray);
 
         int numZeroCeils = 0;
-        for (int i = 0; i < len ; i++ ) {
+        for (int i = 0; i < len; i++) {
             if (newFloatArray[i] == 0.0f) {
                 numZeroCeils++;
             }
@@ -76,15 +78,15 @@ public class ArrayTheme {
         intArray = new int[30];
 
         len = intArray.length;
-        
+
         for (int i = 0; i < len; i++) {
             intArray[i] = getIntRnd();
         }
 
-        for (int i = 0; i < len - 1;) {
+        for (int i = 0; i < len - 1; ) {
             sort(intArray);
-            if (intArray[i] == intArray[i+1]) {
-                intArray[i+1] = getIntRnd();
+            if (intArray[i] == intArray[i + 1]) {
+                intArray[i + 1] = getIntRnd();
                 i = 0;
             } else {
                 i++;
@@ -98,7 +100,7 @@ public class ArrayTheme {
         String[] strArray;
 
         int lenStrArray = 0;
-        
+
         for (int i = 0; i < srcStrArray.length; i++) {
             if (!isBlank(srcStrArray[i])) {
                 lenStrArray += 1;
@@ -124,7 +126,7 @@ public class ArrayTheme {
                 }
                 if (end > start && start != -1) {
                     System.arraycopy(srcStrArray, start, strArray, destPos, (end - start));
-                    destPos +=(end - start);
+                    destPos += (end - start);
                     start = -1;
                     end = -1;
                 }
@@ -165,10 +167,10 @@ public class ArrayTheme {
     private static void sort(int[] intArray) {
         for (int i = 0; i < intArray.length; i++) {
             for (int j = 0; j < intArray.length - 1; j++) {
-                if (intArray[j] > intArray[j+1]) {
-                    intArray[j] ^= intArray[j+1];
-                    intArray[j+1] = intArray[j] ^ intArray[j+1];
-                    intArray[j] ^= intArray[j+1];
+                if (intArray[j] > intArray[j + 1]) {
+                    intArray[j] ^= intArray[j + 1];
+                    intArray[j + 1] = intArray[j] ^ intArray[j + 1];
+                    intArray[j] ^= intArray[j + 1];
                 }
             }
         }
