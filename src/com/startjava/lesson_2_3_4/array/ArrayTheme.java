@@ -3,7 +3,7 @@ package com.startjava.lesson_2_3_4.array;
 public class ArrayTheme {
     public static void main(String[] args) {
         System.out.println("1. Реверс значений массива");
-        int[] intArray = {1, 2, 3, 4, 5, 6, 7};
+        int[] intArray = {7, 3, 2, 6, 4, 5, 1};
         int len = intArray.length;
 
         System.out.print("Массив первоначальный :");
@@ -38,7 +38,7 @@ public class ArrayTheme {
         float[] srcFloatArray = new float[15];
         len = srcFloatArray.length;
 
-        for (int i = 0; i < len; srcFloatArray[i++] = (float) Math.random() * 100) ;
+        for (int i = 0; i < len; srcFloatArray[i++] = (float) Math.random() * 100);
 
         int midIndex = len / 2;
         float[] newFloatArray = new float[len];
@@ -151,7 +151,7 @@ public class ArrayTheme {
     private static void printArray(float[] floatArray) {
         for (int i = 0, numsCol = 0; i < floatArray.length; i++) {
             System.out.printf("%7.3f", floatArray[i]);
-            if (numsCol == 8) {
+            if (numsCol == 7) {
                 numsCol = 0;
                 System.out.println();
             } else {
