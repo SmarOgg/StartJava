@@ -9,10 +9,11 @@ public class ArrayTheme {
         System.out.print("Массив первоначальный :");
         printArray(intArray, 0);
         System.out.print("\nМассив после реверса :");
-        for (int i = 0, numExchange; i <= len / 2; i++, len--) {
-            numExchange = intArray[i];
-            intArray[i] = intArray[len - 1];
-            intArray[len - 1] = numExchange;
+        for (int i = 0; i <= len / 2; i++) {
+            int buffer = intArray[i];
+            len--;
+            intArray[i] = intArray[len];
+            intArray[len] = buffer;
         }
         printArray(intArray, 0);
 
@@ -20,44 +21,44 @@ public class ArrayTheme {
         intArray = new int[10];
         len = intArray.length;
 
-        for (int i = 0; i < len; intArray[i++] = (int) (Math.random() * 10)) ;
+        for (int i = 0; i < len; i++) {
+            intArray[i] = (int) (Math.random() * 10);
+        }
 
         int result = 1;
-        for (int i = 1; i < len - 1; result *= intArray[i++]) ;
-
         for (int i = 1; i < len - 1; i++) {
-            System.out.print(intArray[i] + ((i >= 1 && i < (len - 2)) ? " * " : " = " + result));
+            result *= intArray[i];
+            System.out.print(intArray[i] + ((i < (len - 2)) ? " * " : " = " + result));
         }
 
         System.out.print("\nindex[" + 0 + "] = " + intArray[0]);
         System.out.print("\nindex[" + 9 + "] = " + intArray[len - 1]);
 
         System.out.println("\n\n3. Удаление элементов массива");
-        float[] srcFloatArray = new float[15];
-        len = srcFloatArray.length;
-
-        for (int i = 0; i < len; srcFloatArray[i++] = (float) Math.random()) ;
-
-        System.out.println("Исходный массив :");
-        printArray(srcFloatArray);
-
-        float midValue = srcFloatArray[len / 2];
+        float[] floatArray = new float[15];
+        len = floatArray.length;
 
         for (int i = 0; i < len; i++) {
-            srcFloatArray[i] = (srcFloatArray[i] > midValue) ?
-                    0.0f : srcFloatArray[i];
+            floatArray[i] = (float) Math.random();
+        }
+
+        System.out.println("Исходный массив :");
+        printArray(floatArray);
+
+        float middleNum = floatArray[len / 2];
+
+        int numZeroCells = 0;
+        for (int i = 0; i < len; i++) {
+            if (floatArray[i] > middleNum) {
+                floatArray[i] = 0.0f;
+                numZeroCells++;
+            }
         }
 
         System.out.println("\nИзмененный массив :");
-        printArray(srcFloatArray);
+        printArray(floatArray);
 
-        int numZeroCeils = 0;
-        for (int i = 0; i < len; i++) {
-            if (srcFloatArray[i] == 0.0f) {
-                numZeroCeils++;
-            }
-        }
-        System.out.println("\nКоличество обнуленных ячеек : " + numZeroCeils);
+        System.out.println("\nКоличество обнуленных ячеек : " + numZeroCells);
 
         System.out.println("\n4. Вывод элементов массива лесенкой в обратном порядке");
         char[] charArray = new char['Z' - 'A' + 1];
