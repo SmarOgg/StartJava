@@ -9,11 +9,10 @@ public class ArrayTheme {
         System.out.print("Массив первоначальный :");
         printArray(intArray, 0);
         System.out.print("\nМассив после реверса :");
-        for (int i = 0; i < len / 2; i++) {
-            int index = len - 1 - i;
-            intArray[i] ^= intArray[index];
-            intArray[index] = intArray[i] ^ intArray[index];
-            intArray[i] ^= intArray[index];
+        for (int i = 0, numExchange; i <= len / 2; i++, len--) {
+            numExchange = intArray[i];
+            intArray[i] = intArray[len - 1];
+            intArray[len - 1] = numExchange;
         }
         printArray(intArray, 0);
 
@@ -21,41 +20,40 @@ public class ArrayTheme {
         intArray = new int[10];
         len = intArray.length;
 
+        for (int i = 0; i < len; intArray[i++] = (int) (Math.random() * 10)) ;
+
         int result = 1;
-        for (int i = 0; i < len; i++) {
-            intArray[i] = i;
-            result *= (i == 0 || i == 9) ? 1 : intArray[i];
-            System.out.print((i == 0 || i == 9) ?
-                    "index[" + i + "] = " + intArray[i] + " " : "");
+        for (int i = 1; i < len - 1; result *= intArray[i++]) ;
+
+        for (int i = 1; i < len - 1; i++) {
+            System.out.print(intArray[i] + ((i >= 1 && i < (len - 2)) ? " * " : " = " + result));
         }
-        System.out.println();
-        for (int i = 0; i < len; i++) {
-            System.out.print((i == 0 || i == 9) ?
-                    "" : intArray[i] + ((i >= 1 && i < 8) ? " * " : " = " + result));
-        }
+
+        System.out.print("\nindex[" + 0 + "] = " + intArray[0]);
+        System.out.print("\nindex[" + 9 + "] = " + intArray[len - 1]);
 
         System.out.println("\n\n3. Удаление элементов массива");
         float[] srcFloatArray = new float[15];
         len = srcFloatArray.length;
 
-        for (int i = 0; i < len; srcFloatArray[i++] = (float) Math.random() * 100);
+        for (int i = 0; i < len; srcFloatArray[i++] = (float) Math.random()) ;
 
-        int midIndex = len / 2;
-        float[] newFloatArray = new float[len];
-
-        for (int i = 0; i < len; i++) {
-            newFloatArray[i] = (srcFloatArray[i] > srcFloatArray[midIndex]) ?
-                    0.0f : srcFloatArray[i];
-        }
         System.out.println("Исходный массив :");
         printArray(srcFloatArray);
 
+        float midValue = srcFloatArray[len / 2];
+
+        for (int i = 0; i < len; i++) {
+            srcFloatArray[i] = (srcFloatArray[i] > midValue) ?
+                    0.0f : srcFloatArray[i];
+        }
+
         System.out.println("\nИзмененный массив :");
-        printArray(newFloatArray);
+        printArray(srcFloatArray);
 
         int numZeroCeils = 0;
         for (int i = 0; i < len; i++) {
-            if (newFloatArray[i] == 0.0f) {
+            if (srcFloatArray[i] == 0.0f) {
                 numZeroCeils++;
             }
         }
