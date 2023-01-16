@@ -22,7 +22,7 @@ public class ArrayTheme {
         len = intArray.length;
 
         for (int i = 0; i < len; i++) {
-            intArray[i] = (int) (Math.random() * 10);
+            intArray[i] = i;
         }
 
         int result = 1;
@@ -61,14 +61,14 @@ public class ArrayTheme {
         System.out.println("\nКоличество обнуленных ячеек : " + numZeroCells);
 
         System.out.println("\n4. Вывод элементов массива лесенкой в обратном порядке");
-        char[] charArray = new char['Z' - 'A' + 1];
+        char[] charAlphaLetters = new char['Z' - 'A' + 1];
         for (int i = 0; i <= 'Z' - 'A'; i++) {
-            charArray[i] = (char) ('A' + i);
+            charAlphaLetters[i] = (char) ('A' + i);
         }
-        len = charArray.length;
+        len = charAlphaLetters.length;
         for (int i = 0; i <= len; i++) {
             for (int j = len - 1; j >= len - i; j--) {
-                System.out.print(charArray[j]);
+                System.out.print(charAlphaLetters[j]);
             }
             System.out.println();
         }
@@ -79,13 +79,13 @@ public class ArrayTheme {
         len = intArray.length;
 
         for (int i = 0; i < len; i++) {
-            intArray[i] = getIntRnd();
+            intArray[i] = intRandom();
         }
 
         for (int i = 0; i < len - 1; ) {
             sort(intArray);
             if (intArray[i] == intArray[i + 1]) {
-                intArray[i + 1] = getIntRnd();
+                intArray[i + 1] = intRandom();
                 i = 0;
             } else {
                 i++;
@@ -95,43 +95,40 @@ public class ArrayTheme {
         printArray(intArray, 10);
 
         System.out.println("\n6. Сдвиг элементов массива");
-        String[] srcStrArray = {"    ", "AA", "", "BBB", "CC", "D", "    ", "E", "FF", "G", ""};
-        String[] strArray;
+        String[] destStrArray = {"    ", "AA", "", "BBB", "CC", "D", "    ", "E", "FF", "G", ""};
 
         int lenStrArray = 0;
 
-        for (int i = 0; i < srcStrArray.length; i++) {
-            if (!isBlank(srcStrArray[i])) {
-                lenStrArray += 1;
+        for (String s : destStrArray) {
+            if (!s.isBlank()) {
+                lenStrArray++;
             }
         }
 
-        strArray = new String[lenStrArray];
+        String[] strArray = new String[lenStrArray];
 
         int start = -1;
         int end = -1;
         int destPos = 0;
-        for (int i = 0; i < srcStrArray.length; i++) {
-            if (!isBlank(srcStrArray[i])) {
+        for (int i = 0; i < destStrArray.length; i++) {
+            if (!destStrArray[i].isBlank()) {
                 if (start == -1) {
                     start = i;
                     end = -1;
                 }
-            }
-
-            if (isBlank(srcStrArray[i])) {
+            } else {
                 if (end == -1) {
                     end = i;
                 }
                 if (end > start && start != -1) {
-                    System.arraycopy(srcStrArray, start, strArray, destPos, (end - start));
+                    System.arraycopy(destStrArray, start, strArray, destPos, (end - start));
                     destPos += (end - start);
                     start = -1;
                     end = -1;
                 }
             }
         }
-        printArray(srcStrArray);
+        printArray(destStrArray);
         printArray(strArray);
     }
 
@@ -159,7 +156,7 @@ public class ArrayTheme {
         }
     }
 
-    private static int getIntRnd() {
+    private static int intRandom() {
         return (int) (Math.random() * 40) + 60;
     }
 
@@ -167,16 +164,12 @@ public class ArrayTheme {
         for (int i = 0; i < intArray.length; i++) {
             for (int j = 0; j < intArray.length - 1; j++) {
                 if (intArray[j] > intArray[j + 1]) {
-                    intArray[j] ^= intArray[j + 1];
-                    intArray[j + 1] = intArray[j] ^ intArray[j + 1];
-                    intArray[j] ^= intArray[j + 1];
+                    int buffer = intArray[j];
+                    intArray[j] = intArray[j + 1];
+                    intArray[j + 1] = buffer;
                 }
             }
         }
-    }
-
-    private static boolean isBlank(String str) {
-        return str.replaceAll(" ", "").equals("");
     }
 
     private static void printArray(String[] strArray) {
