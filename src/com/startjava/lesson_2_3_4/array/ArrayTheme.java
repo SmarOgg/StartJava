@@ -25,10 +25,10 @@ public class ArrayTheme {
             intArray[i] = i;
         }
 
-        int result = 1;
+        int composition = 1;
         for (int i = 1; i < len - 1; i++) {
-            result *= intArray[i];
-            System.out.print(intArray[i] + ((i < (len - 2)) ? " * " : " = " + result));
+            composition *= intArray[i];
+            System.out.print(intArray[i] + ((i < (len - 2)) ? " * " : " = " + composition));
         }
 
         System.out.print("\nindex[" + 0 + "] = " + intArray[0]);
@@ -61,14 +61,14 @@ public class ArrayTheme {
         System.out.println("\nКоличество обнуленных ячеек : " + numZeroCells);
 
         System.out.println("\n4. Вывод элементов массива лесенкой в обратном порядке");
-        char[] charAlphaLetters = new char['Z' - 'A' + 1];
+        char[] alphabet = new char['Z' - 'A' + 1];
         for (int i = 0; i <= 'Z' - 'A'; i++) {
-            charAlphaLetters[i] = (char) ('A' + i);
+            alphabet[i] = (char) ('A' + i);
         }
-        len = charAlphaLetters.length;
+        len = alphabet.length;
         for (int i = 0; i <= len; i++) {
             for (int j = len - 1; j >= len - i; j--) {
-                System.out.print(charAlphaLetters[j]);
+                System.out.print(alphabet[j]);
             }
             System.out.println();
         }
