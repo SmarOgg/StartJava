@@ -1,4 +1,4 @@
-package com.startjava.graduation;
+package com.startjava.graduation.bookshelf;
 
 import java.util.Arrays;
 
