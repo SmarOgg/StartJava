@@ -14,15 +14,10 @@ public class CalculatorTest {
             System.out.print("Введите математическое выражение : ");
             answer = input.next();
 
-            String[] mathExpression = answer.split(" ");
-
-            calc.setA(Integer.parseInt(mathExpression[0]));
-            calc.setSign(mathExpression[1].charAt(0));
-            calc.setB(Integer.parseInt(mathExpression[2]));
+            calc.setMathExpression(answer);
+            System.out.print(calc + " = ");
 
             double result = calc.calculate();
-            System.out.print(calc.getA() + " " + calc.getSign() + " " + calc.getB()
-                    + " = ");
 
             if (result % 1 == 0) {
                 System.out.println((int) result);

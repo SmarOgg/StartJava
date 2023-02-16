@@ -5,28 +5,12 @@ public class Calculator {
     private int b;
     private char sign;
 
-    public int getA() {
-        return a;
-    }
+    public void setMathExpression(String expression) {
+        String[] mathExpression = expression.split(" ");
 
-    public void setA(int a) {
-        this.a = a;
-    }
-
-    public int getB() {
-        return b;
-    }
-
-    public void setB(int b) {
-        this.b = b;
-    }
-
-    public char getSign() {
-        return sign;
-    }
-
-    public void setSign(char sign) {
-        this.sign = sign;
+        a = Integer.parseInt(mathExpression[0]);
+        sign = mathExpression[1].charAt(0);
+        b = Integer.parseInt(mathExpression[2]);
     }
 
     public double calculate() {
@@ -39,5 +23,10 @@ public class Calculator {
             case '%' -> (double) a % b;
             default -> 0;
         };
+    }
+
+    @Override
+    public String toString() {
+        return a + " " + sign + " " + b;
     }
 }
