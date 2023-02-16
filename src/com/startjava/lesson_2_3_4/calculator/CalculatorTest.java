@@ -7,23 +7,31 @@ public class CalculatorTest {
         String answer;
 
         Calculator calc = new Calculator();
-        Scanner input = new Scanner(System.in);;
-        
+        Scanner input = new Scanner(System.in);
+        input.useDelimiter("\n");
+
         do {
-            System.out.print("Введите первое число: ");
-            calc.setA(input.nextInt());
-            System.out.print("Введите знак математической операции: ");
-            calc.setSign(input.next().charAt(0));
-            System.out.print("Введите второе число: ");
-            calc.setB(input.nextInt());
+            System.out.print("Введите математическое выражение : ");
+            answer = input.next();
 
-            System.out.println(calc.getA() + " " + calc.getSign() + " " + calc.getB() 
-                    + " = " + calc.calculate());
+            String[] mathExpression = answer.split(" ");
 
-            do {
-                System.out.print("Хотите продолжить вычисления? [yes/no]: ");
-                answer = input.next();
-            } while (!answer.equals("yes") && !answer.equals("no"));
+            calc.setA(Integer.parseInt(mathExpression[0]));
+            calc.setSign(mathExpression[1].charAt(0));
+            calc.setB(Integer.parseInt(mathExpression[2]));
+
+            double result = calc.calculate();
+            System.out.print(calc.getA() + " " + calc.getSign() + " " + calc.getB()
+                    + " = ");
+
+            if (result % 1 == 0) {
+                System.out.println((int) result);
+            } else {
+                System.out.println(result);
+            }
+
+            System.out.print("Хотите продолжить вычисления? [yes/no]: ");
+            answer = input.next();
         } while (!answer.equals("no"));
     }
 }
