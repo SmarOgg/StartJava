@@ -5,6 +5,9 @@ public class Calculator {
     private int b;
     private char sign;
 
+    public char getSign() {
+        return sign;
+    }
     public void setMathExpression(String expression) {
         String[] mathExpression = expression.split(" ");
 
@@ -21,7 +24,7 @@ public class Calculator {
             case '/' -> (double) a / b;
             case '^' -> Math.pow(a, b);
             case '%' -> (double) a % b;
-            default -> 0;
+            default -> Double.MIN_VALUE;
         };
     }
 

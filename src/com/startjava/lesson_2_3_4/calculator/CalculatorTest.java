@@ -15,14 +15,15 @@ public class CalculatorTest {
             answer = input.next();
 
             calc.setMathExpression(answer);
-            System.out.print(calc + " = ");
 
             double result = calc.calculate();
 
-            if (result % 1 == 0) {
-                System.out.println((int) result);
+            if (result == Double.MIN_VALUE) {
+                System.out.println("Ошибка: знак " + calc.getSign() + " не поддерживается");
+            } else if (result % 1 == 0) {
+                System.out.print(calc + " = " + (int) result);
             } else {
-                System.out.println(result);
+                System.out.format("%s = %.3f \n", calc, result);
             }
 
             System.out.print("Хотите продолжить вычисления? [yes/no]: ");
