@@ -17,7 +17,7 @@ public class CalculatorTest {
             double result = calc.calculate(expression);
 
             printResultMessage(expression, result);
-            
+
             do {
                 System.out.print("\nХотите продолжить вычисления? [yes/no]: ");
                 answer = input.next();
@@ -27,10 +27,13 @@ public class CalculatorTest {
     }
 
     private static void printResultMessage(String expression, double result) {
-        if (result % 1 == 0) {
-            System.out.print(expression + " = " + (int) result);
-        } else {
-            System.out.format("%s = %.3f \n", expression, result);
+        if (result != Double.MIN_VALUE) {
+            if (result % 1 == 0) {
+                System.out.print(expression + " = " + (int) result);
+            } else {
+                System.out.format("%s = %.3f \n", expression, result);
+            }
         }
+
     }
 }
