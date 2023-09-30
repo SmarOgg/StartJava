@@ -8,25 +8,23 @@ public class CalculatorTest {
         Scanner input = new Scanner(System.in);
         input.useDelimiter("\n");
 
-        String answer;
+        String answer = "yes";
 
         do {
-            System.out.print("Введите математическое выражение : ");
-            String expression = input.next();
+            if (answer.equals("yes")) {
+                System.out.print("Введите математическое выражение : ");
+                String expression = input.next();
 
-            double result = calc.calculate(expression);
+                double result = calc.calculate(expression);
+                print(expression, result);
+            }
 
-            printResultMessage(expression, result);
-
-            do {
-                System.out.print("\nХотите продолжить вычисления? [yes/no]: ");
-                answer = input.next();
-            } while (!(answer.equals("yes") || answer.equals("no")));
-
+            System.out.print("\nХотите продолжить вычисления? [yes/no]: ");
+            answer = input.next();
         } while (!answer.equals("no"));
     }
 
-    private static void printResultMessage(String expression, double result) {
+    private static void print(String expression, double result) {
         if (result != Double.MIN_VALUE) {
             if (result % 1 == 0) {
                 System.out.print(expression + " = " + (int) result);
