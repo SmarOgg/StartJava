@@ -15,7 +15,10 @@ public class Calculator {
             case '/' -> (double) a / b;
             case '^' -> Math.pow(a, b);
             case '%' -> a % b;
-            default -> Double.MIN_VALUE;
+            default -> {
+                System.out.println("Ошибка: знак " + sign + " гн поддерживается");
+                yield Double.MIN_VALUE;
+            }
         };
     }
 }
