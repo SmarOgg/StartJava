@@ -26,12 +26,7 @@ public class CalculatorTest {
 
     private static void print(String expression, double result) {
         if (result != Double.MIN_VALUE) {
-            if (result % 1 == 0) {
-                System.out.print(expression + " = " + (int) result);
-            } else {
-                System.out.format("%s = %.3f \n", expression, result);
-            }
+            System.out.printf("%s = " + (result % 1 == 0 ? "%.0f \n" : "%.3f \n"), expression, result);
         }
-
     }
 }
