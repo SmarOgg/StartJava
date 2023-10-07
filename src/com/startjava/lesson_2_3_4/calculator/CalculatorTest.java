@@ -28,8 +28,6 @@ public class CalculatorTest {
     }
 
     private static void print(String expression, double result) {
-        if (result != Double.MIN_VALUE) {
-            System.out.printf("%s = " + (result % 1 == 0 ? "%.0f \n" : "%.3f \n"), expression, result);
-        }
+        System.out.printf("%s = " + (result % 1 == 0 ? "%.0f \n" : "%.3f \n"), expression, result);
     }
 }
