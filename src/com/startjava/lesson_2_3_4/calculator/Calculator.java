@@ -8,6 +8,7 @@ public class Calculator {
             throw new CalculatorException("В выражении должны быть два числа, знак операции и разделены пробелами");
         }
 
+
         int a = Integer.parseInt(mathExpression[0]);
         char sign = mathExpression[1].charAt(0);
         int b = Integer.parseInt(mathExpression[2]);
