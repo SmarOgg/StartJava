@@ -4,11 +4,12 @@ import java.util.Arrays;
 
 public class Player {
     private final String name;
-    private int[] numbers = new int[10];
-    private int indicator = 0;
+    private final int[] numbers = new int[10];
+    private int indicator;
 
     public Player(String name) {
         this.name = name;
+        indicator = 1;
     }
 
     public String getName() {
@@ -16,7 +17,7 @@ public class Player {
     }
 
     public int[] getNumber() {
-        return Arrays.copyOf(numbers, indicator);
+        return Arrays.copyOf(numbers, indicator - 1);
     }
 
     public void setNumber(int num) {
@@ -25,7 +26,7 @@ public class Player {
     }
 
     public void clearNumbers() {
-        Arrays.fill(numbers,0,indicator-1,0);
+        Arrays.fill(numbers, 0, indicator - 1, 0);
     }
 
     public int getAttempts() {
