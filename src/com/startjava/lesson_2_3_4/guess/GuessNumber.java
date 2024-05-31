@@ -8,9 +8,9 @@ public class GuessNumber {
     private Player player2;
     private Player currentPlayer;
 
-    public GuessNumber(Player player1, Player player2) {
-        this.player1 = player1;
-        this.player2 = player2;
+    public GuessNumber(String namePlayer1, String namePlayer2) {
+        player1 = new Player(namePlayer1);
+        player2 = new Player(namePlayer2);
     }
 
     public void start() {
