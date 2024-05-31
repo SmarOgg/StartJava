@@ -148,13 +148,13 @@ public class CyclesTheme {
 
         System.out.println("\n7.  Отображение ASCII-символов\n");
         System.out.printf("%6s%6s%n", "Dec", "Char");
-        for (i = 0; i < '0' ; i++) {
+        for (i = 0; i < '0'; i++) {
             if ((i % 2) != 0) {
                 System.out.printf("%6d%6s\n", i, (char) i);
             }
         }
 
-        for (i = 'a'; i <= 'z' ; i++) {
+        for (i = 'a'; i <= 'z'; i++) {
             if (i % 2 == 0) {
                 System.out.printf("%6d%6s\n", i, (char) i);
             }
@@ -189,7 +189,7 @@ public class CyclesTheme {
             sumSecondTriple += secondTriple % 10;
             secondTriple /= 10;
         }
-        
+
         firstTriple = num / 1000;
         secondTriple = num % 1000;
 
@@ -202,21 +202,21 @@ public class CyclesTheme {
         }
 
         System.out.println("\n10. Вывод таблицы умножения Пифагора\n");
-        
-        System.out.printf("%20s%n","ТАБЛИЦА ПИФАГОРА");
+
+        System.out.printf("%20s%n", "ТАБЛИЦА ПИФАГОРА");
         System.out.print(" |");
 
-        for ( i = 2; i <= 9; i++ ) {
+        for (i = 2; i <= 9; i++) {
             System.out.printf("%3d", i);
         }
         System.out.println();
-        for ( i = 1; i <= 26; i++ ) {
+        for (i = 1; i <= 26; i++) {
             System.out.print("-");
         }
         System.out.println();
-        for ( i = 2; i <= 9; i++ ) {
-            System.out.printf("%d%s",i,"|");
-            for ( j = 2; j <= 9; j++ ) {
+        for (i = 2; i <= 9; i++) {
+            System.out.printf("%d%s", i, "|");
+            for (j = 2; j <= 9; j++) {
                 System.out.printf("%3d", i * j);
             }
             System.out.println();

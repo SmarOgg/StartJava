@@ -4,11 +4,11 @@ public class ArrayTheme {
     public static void main(String[] args) {
         System.out.println("1. Реверс значений массива");
         int[] intArray = {7, 3, 2, 6, 4, 5, 1};
-        int len = intArray.length;
 
         System.out.print("Массив первоначальный :");
         printArray(intArray, 0);
         System.out.print("\nМассив после реверса :");
+        int len = intArray.length;
         for (int i = 0; i <= len / 2; i++) {
             int buffer = intArray[i];
             len--;
@@ -156,6 +156,21 @@ public class ArrayTheme {
         }
     }
 
+    private static void printArray(String[] strArray) {
+        int len = strArray.length;
+
+        System.out.print("[");
+
+        for (int i = 0; i < len; i++) {
+            System.out.print(strArray[i]);
+            if (i == len - 1) {
+                System.out.println("]");
+            } else {
+                System.out.print(",");
+            }
+        }
+    }
+
     private static int intRandom() {
         return (int) (Math.random() * 40) + 60;
     }
@@ -168,21 +183,6 @@ public class ArrayTheme {
                     intArray[j] = intArray[j + 1];
                     intArray[j + 1] = buffer;
                 }
-            }
-        }
-    }
-
-    private static void printArray(String[] strArray) {
-        int len = strArray.length;
-
-        System.out.print("[");
-
-        for (int i = 0; i < len; i++) {
-            System.out.print(strArray[i]);
-            if (i == len - 1) {
-                System.out.println("]");
-            } else {
-                System.out.print(",");
             }
         }
     }

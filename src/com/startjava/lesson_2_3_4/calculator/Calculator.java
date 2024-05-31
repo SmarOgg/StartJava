@@ -4,10 +4,8 @@ public class Calculator {
     public static double calculate(String expression) {
         String[] mathExpression = expression.split(" ");
 
-        if (mathExpression.length != 3) {
-            throw new CalculatorException("В выражении должны быть два числа, знак операции и разделены пробелами");
-        }
-
+        if (mathExpression.length != 3) throw new CalculatorException("В выражении должны быть два числа, " +
+                "знак операции и разделены пробелами");
 
         int a = Integer.parseInt(mathExpression[0]);
         char sign = mathExpression[1].charAt(0);

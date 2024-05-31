@@ -6,7 +6,6 @@ public class IfElseStatementTheme {
         int age = 20;
         boolean male = true;
         double height = 1.8;
-        char firstLetterName;
 
         if (age > 20) {
             System.out.println("Возраст: больше 20");
@@ -26,6 +25,8 @@ public class IfElseStatementTheme {
             System.out.println("Рост: больше 1.8 метра");
         }
 
+        char firstLetterName;
+
         firstLetterName = "Maxim".charAt(0);
         if (firstLetterName == 'M') {
             System.out.println("Первая буква имени: М");
@@ -39,7 +40,7 @@ public class IfElseStatementTheme {
         int numFirst = 13;
         int numSecond = 130;
 
-        if ( numFirst > numSecond) {
+        if (numFirst > numSecond) {
             System.out.println("Сравнение чисел: " + numFirst + " и " + numSecond + 
                     ", где max - " + numFirst + ", min - " + numSecond);
         } else if (numFirst < numSecond) {
@@ -116,7 +117,7 @@ public class IfElseStatementTheme {
         }
 
         System.out.println("\n\n5.  Определение буквы, числа или символа по их коду\n");
-        char srcSymbol = '\u0057';
+        char srcSymbol = 'W';
 
         if (srcSymbol >= 'a' && srcSymbol <= 'z') {
             System.out.println(srcSymbol + " - маленькая буква");

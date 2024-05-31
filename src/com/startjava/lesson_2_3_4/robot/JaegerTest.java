@@ -1,10 +1,8 @@
 package com.startjava.lesson_2_3_4.robot;
 
 public class JaegerTest {
-    
     public static void main(String[] args) {
         Jaeger strikerEureka = new Jaeger();
-        Jaeger chernoAlpha = new Jaeger("Cherno Alpha", "Mark-1", "Russia", 85.34f, 2.412f, 10, 10);
 
         strikerEureka.setModelname("Striker Eureka");
         strikerEureka.setMark("Mark-5");
@@ -12,6 +10,8 @@ public class JaegerTest {
         strikerEureka.setHeight(76.2f);
         strikerEureka.setWeight(1.85f);
         strikerEureka.setArmor(9);
+
+        Jaeger chernoAlpha = new Jaeger("Cherno Alpha", "Mark-1", "Russia", 85.34f, 2.412f, 10, 10);
 
         System.out.println("Обнаружены роботы :");
         System.out.printf("Modelname ->\t%s\t| %s%n",
@@ -28,6 +28,5 @@ public class JaegerTest {
                 strikerEureka.getStrength(), chernoAlpha.getStrength());
         System.out.printf("Armor ->\t%d \t\t| %d%n",
                 strikerEureka.getArmor(), chernoAlpha.getArmor());
-        
     }
 }

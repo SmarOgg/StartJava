@@ -4,7 +4,6 @@ import java.util.Scanner;
 
 public class GuessNumber {
     private int hiddenNum;
-    private int endRange = 100;
     private Player player1;
     private Player player2;
     private Player currentPlayer;
@@ -22,9 +21,11 @@ public class GuessNumber {
             System.out.print("Ход игрока " + currentPlayer.getName() + " : ");
             currentPlayer.setNumber(input.nextInt());
             if (currentPlayer.getNumber() > hiddenNum) {
-                System.out.println("Число " + currentPlayer.getNumber() + " больше того, что загадал компьютер");
+                System.out.println("Число " + currentPlayer.getNumber() +
+                        " больше того, что загадал компьютер");
             } else if (currentPlayer.getNumber() < hiddenNum) {
-                System.out.println("Число " + currentPlayer.getNumber() + " меньше того, что загадал компьютер");
+                System.out.println("Число " + currentPlayer.getNumber() +
+                        " меньше того, что загадал компьютер");
             } else {
                 break;
             }
@@ -33,6 +34,7 @@ public class GuessNumber {
     }
 
     private void init() {
+        int endRange = 100;
         hiddenNum = (int) (Math.random() * endRange) + 1;
         changePlayer();
     }

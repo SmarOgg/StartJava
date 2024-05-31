@@ -9,14 +9,14 @@ public class VariablesTheme {
         float frequency = 3.3f;
         long ram = 16_777_216;
         double serialNumber = 2124709.235435;
-        char processorСharacteristic = 'H';
+        char processorCharacteristic = 'H';
         boolean virtualization = true;
 
         System.out.println("Поколение процессора : " + generation + " поколения ");
         System.out.println("Производительность : " + efficiency);
         System.out.println("Ядер : " + cores);
         System.out.println("Частота : " + frequency + " Hz");
-        System.out.println("Характеристика процессора : " + processorСharacteristic);
+        System.out.println("Характеристика процессора : " + processorCharacteristic);
         System.out.println("Оперативная память : " + ram + " байт");
         System.out.println("Серийный номер : " + serialNumber);
         System.out.println("Виртуализация : " + virtualization);
@@ -114,22 +114,23 @@ public class VariablesTheme {
 
         System.out.println("\n" + space + space + space + space + slash + backslash);
         System.out.println("" + space + space + space + slash + space + space + backslash);
-        System.out.println("" + space + space + slash + underscore + openBracket + space
-                + closeBracket + backslash);
-        System.out.println("" + space + slash + space + space + space + space + space
-                + space + backslash);
-        System.out.println("" + slash + underscore + underscore + underscore + underscore
-                + slash + backslash + underscore + underscore + backslash);
+        System.out.println("" + space + space + slash + underscore + openBracket + space +
+                closeBracket + backslash);
+        System.out.println("" + space + slash + space + space + space + space + space +
+                space + backslash);
+        System.out.println("" + slash + underscore + underscore + underscore + underscore +
+                slash + backslash + underscore + underscore + backslash);
 
         System.out.println("\n9.  Произведение и сумма цифр числа");
-        int sumDigits = 0;
-        int prodDigits = 0;
 
         srcNum = 345;
         digitX = srcNum / 100;
         digitY = (srcNum % 100) / 10;
         digitZ = srcNum % 10;
-        
+
+        int sumDigits = 0;
+        int prodDigits = 0;
+
         sumDigits = digitX + digitY + digitZ;
         prodDigits = digitX * digitY * digitZ;
 
@@ -141,7 +142,7 @@ public class VariablesTheme {
 
         int hh = seconds % 24;
         int mm = (seconds / 24) / 60;
-        int ss = (seconds / 24) % 60;;
+        int ss = (seconds / 24) % 60;
 
         System.out.println("\n" + hh + ":" + mm + ":" + ss);
     }

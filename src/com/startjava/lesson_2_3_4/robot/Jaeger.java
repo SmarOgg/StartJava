@@ -1,7 +1,6 @@
 package com.startjava.lesson_2_3_4.robot;
 
 public class Jaeger {
-    
     private String modelName;
     private String mark;
     private String origin;

@@ -69,7 +69,8 @@ public class BookshelfTest {
         if (numBooks == 0) {
             System.out.println("Шкаф пуст. Вы можете добавить в него первую книгу.");
         } else {
-            System.out.println("В шкафу " + numBooks + " книги и свободно " + bookshelf.countEmptyShelf() + " полок.");
+            System.out.println("В шкафу " + numBooks + " книги и свободно " +
+                    bookshelf.countEmptyShelf() + " полок.");
             System.out.println();
             for (Book b : books) {
                 if (b != null) {

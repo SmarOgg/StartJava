@@ -1,7 +1,6 @@
 package com.startjava.lesson_2_3_4.person;
 
 public class Person {
-
     String sex = "male";
     String name = "Alex";
     float height = 1.98f;
@@ -9,26 +8,20 @@ public class Person {
     int age = 35;
 
     public Person() {
-        
     }
 
     public void go() {
-
     }
 
     public void sit() {
-
     }
 
     public void run() {
-
     }
 
     public void speak() {
-
     }
-    
-    public void learnJava() {
 
+    public void learnJava() {
     }
 }
