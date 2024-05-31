@@ -31,7 +31,7 @@ public class GuessNumber {
                 System.out.println("Число " + inputNum +
                         " меньше того, что загадал компьютер");
             } else {
-                System.out.println(currentPlayer.getName() + "угадал число " +
+                System.out.println(currentPlayer.getName() + " угадал число " +
                         inputNum + " c " + currentPlayer.getAttempts() + "-й попытки");
                 break;
             }
@@ -52,7 +52,7 @@ public class GuessNumber {
         } while (true);
 
         for (Player player : players) {
-            System.out.print("Числа игрока : " + player.getName() + " ");
+            System.out.print("Числа игрока " + player.getName() + " : ");
             printNumbers(player.getNumber());
         }
     }
