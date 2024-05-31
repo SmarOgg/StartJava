@@ -27,4 +27,8 @@ public class Player {
     public void clearNumbers() {
         Arrays.fill(numbers,0,indicator-1,0);
     }
+
+    public int getAttempts() {
+        return indicator;
+    }
 }
