@@ -63,7 +63,7 @@ public class GuessNumber {
         changePlayer();
 
         for (Player player : players) {
-            player.clearNumbers();
+            player.clear();
         }
     }
 
