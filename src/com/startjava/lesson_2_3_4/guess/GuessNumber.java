@@ -4,11 +4,8 @@ import java.util.Scanner;
 
 public class GuessNumber {
     private int hiddenNum;
-    private Player[] players;
+    private final Player[] players;
     private Player currentPlayer;
-
-    public GuessNumber() {
-    }
 
     public GuessNumber(String[] namePlayers) {
         players = new Player[namePlayers.length];
@@ -28,7 +25,7 @@ public class GuessNumber {
         do {
             System.out.print("Ход игрока " + currentPlayer.getName() + " : ");
             inputNum = input.nextInt();
-            currentPlayer.setNumber(inputNum);
+            currentPlayer.addNumber(inputNum);
             if (inputNum > hiddenNum) {
                 System.out.println("Число " + inputNum +
                         " больше того, что загадал компьютер");
@@ -37,19 +34,19 @@ public class GuessNumber {
                         " меньше того, что загадал компьютер");
             } else {
                 System.out.println(currentPlayer.getName() + " угадал число " +
-                        inputNum + " c " + currentPlayer.getAttempts() + "-й попытки");
+                        inputNum + " c " + currentPlayer.getAttempt() + "-й попытки");
                 break;
             }
 
-            if (currentPlayer.getAttempts() == 10) {
+            if (currentPlayer.getAttempt() == 10) {
                 System.out.println("У " + currentPlayer.getName() + " закончились попытки!");
             }
 
-            int attempts = 0;
+            int attempt = 0;
             for (Player player : players) {
-                attempts = player.getAttempts() + attempts;
+                attempt = player.getAttempt() + attempt;
             }
-            if (attempts == players.length * 10) {
+            if (attempt == players.length * 10) {
                 break;
             }
 
@@ -77,7 +74,7 @@ public class GuessNumber {
         for (Player p : players) {
             System.out.print("Числа игрока " + p.getName() + " : ");
 
-            for (int n : p.getNumber()) {
+            for (int n : p.getNumbers()) {
                 System.out.print(n + " ");
             }
             System.out.println();

@@ -9,18 +9,17 @@ public class Player {
 
     public Player(String name) {
         this.name = name;
-        attempt = 0;
     }
 
     public String getName() {
         return name;
     }
 
-    public int[] getNumber() {
+    public int[] getNumbers() {
         return Arrays.copyOf(nums, attempt);
     }
 
-    public void setNumber(int num) {
+    public void addNumber(int num) {
         nums[attempt++] = num;
     }
 
@@ -29,7 +28,7 @@ public class Player {
         attempt = 0;
     }
 
-    public int getAttempts() {
+    public int getAttempt() {
         return attempt;
     }
 }
