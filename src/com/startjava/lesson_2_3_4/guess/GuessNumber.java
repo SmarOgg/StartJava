@@ -76,6 +76,7 @@ public class GuessNumber {
     private void printNumbers(Player[] players) {
         for (Player p : players) {
             System.out.print("Числа игрока " + p.getName() + " : ");
+
             for (int n : p.getNumber()) {
                 System.out.print(n + " ");
             }
