@@ -6,12 +6,15 @@ public class GuessNumberTest {
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
 
-        System.out.print("Введите имя первого игрока :");
-        String namePlayer1 = input.next();
-        System.out.print("Введите имя второго игрока :");
-        String namePlayer2 = input.next();
+        int totalPlayers = 2;
+        String[] namePlayers = new String[totalPlayers];
 
-        GuessNumber game = new GuessNumber(namePlayer1, namePlayer2);
+        for (int i = 0; i < totalPlayers; i++) {
+            System.out.print("Введите имя " + (i + 1) + "-го игрока :");
+            namePlayers[i] = input.next();
+        }
+
+        GuessNumber game = new GuessNumber(namePlayers);
         String answer = "yes";
 
         do {

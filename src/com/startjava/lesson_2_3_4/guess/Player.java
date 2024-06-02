@@ -17,7 +17,7 @@ public class Player {
     }
 
     public int[] getNumber() {
-        return Arrays.copyOf(numbers, attempt+1);
+        return Arrays.copyOf(numbers, attempt);
     }
 
     public void setNumber(int num) {

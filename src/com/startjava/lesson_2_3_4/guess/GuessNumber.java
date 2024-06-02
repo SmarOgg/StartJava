@@ -4,13 +4,18 @@ import java.util.Scanner;
 
 public class GuessNumber {
     private int hiddenNum;
-    private final Player[] players;
+    private Player[] players;
     private Player currentPlayer;
 
-    public GuessNumber(String namePlayer1, String namePlayer2) {
-        players = new Player[2];
-        players[0] = new Player(namePlayer1);
-        players[1] = new Player(namePlayer2);
+    public GuessNumber() {
+    }
+
+    public GuessNumber(String[] namePlayers) {
+        players = new Player[namePlayers.length];
+
+        for (int i = 0; i < players.length; i++) {
+            players[i] = new Player(namePlayers[i]);
+        }
     }
 
     public void start() {
@@ -51,10 +56,7 @@ public class GuessNumber {
             changePlayer();
         } while (true);
 
-        for (Player player : players) {
-            System.out.print("Числа игрока " + player.getName() + " : ");
-            printNumbers(player.getNumber());
-        }
+        printNumbers(players);
     }
 
     private void init() {
@@ -62,8 +64,8 @@ public class GuessNumber {
         hiddenNum = (int) (Math.random() * endRange) + 1;
         changePlayer();
 
-        for (Player player : players) {
-            player.clear();
+        for (Player p : players) {
+            p.clear();
         }
     }
 
@@ -71,10 +73,13 @@ public class GuessNumber {
         currentPlayer = currentPlayer == players[0] ? players[1] : players[0];
     }
 
-    private void printNumbers(int[] numbers) {
-        for (int num : numbers) {
-            System.out.print(num + " ");
+    private void printNumbers(Player[] players) {
+        for (Player p : players) {
+            System.out.print("Числа игрока " + p.getName() + " : ");
+            for (int n : p.getNumber()) {
+                System.out.print(n + " ");
+            }
+            System.out.println();
         }
-        System.out.println();
     }
 }
