@@ -57,12 +57,12 @@ public class GuessNum {
     }
 
     private boolean isGuess(int num) {
-        if (num > hiddenNum) {
-            System.out.println("Число " + num +
-                    " больше того, что загадал компьютер");
-        } else if (num < hiddenNum) {
-            System.out.println("Число " + num +
-                    " меньше того, что загадал компьютер");
+        String text = num > hiddenNum ? num + " больше"
+                : num + " меньше";
+
+        if (num != hiddenNum) {
+            System.out.println("Число " + text +
+                    " того, что загадал компьютер");
         } else {
             System.out.println(currentPlayer.getName() + " угадал число " +
                     num + " c " + currentPlayer.getAttempt() + "-й попытки");
