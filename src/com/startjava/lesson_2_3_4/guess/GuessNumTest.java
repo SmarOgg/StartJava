@@ -6,7 +6,7 @@ public class GuessNumTest {
     public static void main(String[] args) {
         int totalPlayers = 2;
 
-        GuessNum game = new GuessNum(inputNamePlayers(totalPlayers));
+        GuessNum game = new GuessNum(inputNames(totalPlayers));
 
         String answer = "yes";
         Scanner input = new Scanner(System.in);
@@ -18,21 +18,19 @@ public class GuessNumTest {
                 game.start();
                 System.out.print("Хотите продолжить игру? [yes / no]: ");
             }
-
             answer = input.next().toLowerCase();
-
         } while (!answer.equals("no"));
     }
 
-    private static String[] inputNamePlayers(int totalPlayers) {
+    private static String[] inputNames(int totalPlayers) {
         Scanner input = new Scanner(System.in);
 
-        String[] namePlayers = new String[totalPlayers];
+        String[] names = new String[totalPlayers];
         for (int i = 0; i < totalPlayers; i++) {
             System.out.print("Введите имя " + (i + 1) + "-го игрока :");
-            namePlayers[i] = input.next();
+            names[i] = input.next();
         }
 
-        return namePlayers;
+        return names;
     }
 }

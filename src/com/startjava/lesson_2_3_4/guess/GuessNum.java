@@ -7,11 +7,11 @@ public class GuessNum {
     private final Player[] players;
     private Player currentPlayer;
 
-    public GuessNum(String[] namePlayers) {
-        players = new Player[namePlayers.length];
+    public GuessNum(String[] names) {
+        players = new Player[names.length];
 
         for (int i = 0; i < players.length; i++) {
-            players[i] = new Player(namePlayers[i]);
+            players[i] = new Player(names[i]);
         }
     }
 
@@ -20,7 +20,7 @@ public class GuessNum {
         System.out.println("Игра началась! У каждого игрока по 10 попыток");
 
         do {
-            boolean isGuess = playerMove();
+            boolean isGuess = makeMove();
             if (isGuess) {
                 break;
             }
@@ -39,14 +39,14 @@ public class GuessNum {
     private void init() {
         int endRange = 100;
         hiddenNum = (int) (Math.random() * endRange) + 1;
-        changePlayer();
+        currentPlayer = players[0];
 
         for (Player p : players) {
             p.clear();
         }
     }
 
-    private boolean playerMove() {
+    private boolean makeMove() {
         Scanner input = new Scanner(System.in);
 
         System.out.print("Ход игрока " + currentPlayer.getName() + " : ");
