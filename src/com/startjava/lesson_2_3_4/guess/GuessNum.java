@@ -2,12 +2,12 @@ package com.startjava.lesson_2_3_4.guess;
 
 import java.util.Scanner;
 
-public class GuessNumber {
+public class GuessNum {
     private int hiddenNum;
     private final Player[] players;
     private Player currentPlayer;
 
-    public GuessNumber(String[] namePlayers) {
+    public GuessNum(String[] namePlayers) {
         players = new Player[namePlayers.length];
 
         for (int i = 0; i < players.length; i++) {
@@ -33,7 +33,7 @@ public class GuessNumber {
             changePlayer();
         } while (true);
 
-        printNumbers(players);
+        printNums(players);
     }
 
     private void init() {
@@ -51,7 +51,7 @@ public class GuessNumber {
 
         System.out.print("Ход игрока " + currentPlayer.getName() + " : ");
         int inputNum = input.nextInt();
-        currentPlayer.addNumber(inputNum);
+        currentPlayer.addNum(inputNum);
 
         return checkGuess(inputNum);
     }
@@ -88,11 +88,11 @@ public class GuessNumber {
         currentPlayer = currentPlayer == players[0] ? players[1] : players[0];
     }
 
-    private void printNumbers(Player[] players) {
+    private void printNums(Player[] players) {
         for (Player p : players) {
             System.out.print("Числа игрока " + p.getName() + " : ");
 
-            for (int n : p.getNumbers()) {
+            for (int n : p.getNums()) {
                 System.out.print(n + " ");
             }
             System.out.println();

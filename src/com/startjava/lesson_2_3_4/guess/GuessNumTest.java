@@ -2,11 +2,11 @@ package com.startjava.lesson_2_3_4.guess;
 
 import java.util.Scanner;
 
-public class GuessNumberTest {
+public class GuessNumTest {
     public static void main(String[] args) {
         int totalPlayers = 2;
 
-        GuessNumber game = new GuessNumber(inputNamePlayers(totalPlayers));
+        GuessNum game = new GuessNum(inputNamePlayers(totalPlayers));
 
         String answer = "yes";
         Scanner input = new Scanner(System.in);
