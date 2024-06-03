@@ -20,7 +20,9 @@ public class Player {
     }
 
     public void addNum(int num) {
-        nums[attempt++] = num;
+        if (num >= 1 && num <= 100) {
+            nums[attempt++] = num;
+        }
     }
 
     public void clear() {
