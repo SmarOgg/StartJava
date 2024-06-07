@@ -19,10 +19,15 @@ public class Player {
         return Arrays.copyOf(nums, attempt);
     }
 
-    public void addNum(int num) {
+    public boolean addNum(int num) {
+        boolean isAdded = false;
+
         if (num >= 1 && num <= 100) {
             nums[attempt++] = num;
+            isAdded = true;
         }
+
+        return isAdded;
     }
 
     public void clear() {
@@ -32,5 +37,12 @@ public class Player {
 
     public int getAttempt() {
         return attempt;
+    }
+
+    private boolean findNum(int num) {
+        for (int i : nums) {
+            if (i == num) return true;
+        }
+        return false;
     }
 }

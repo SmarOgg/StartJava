@@ -16,17 +16,17 @@ public class GuessNum {
     }
 
     public void start() {
+        Scanner input = new Scanner(System.in);
+
         init();
         System.out.println("Игра началась! У каждого игрока по 10 попыток");
 
         do {
-            boolean isGuess = makeMove();
-            if (isGuess) {
+            if (makeMove(input)) {
                 break;
             }
 
-            boolean isAttempt = hasAttempt();
-            if (!isAttempt) {
+            if (!hasAttempt()) {
                 break;
             }
 
@@ -46,26 +46,41 @@ public class GuessNum {
         }
     }
 
-    private boolean makeMove() {
-        Scanner input = new Scanner(System.in);
-
+    private boolean makeMove(Scanner input) {
         System.out.print("Ход игрока " + currentPlayer.getName() + " : ");
-        int inputNum = input.nextInt();
-        currentPlayer.addNum(inputNum);
 
-        return isGuess(inputNum);
+        int num = inputNum(input);
+
+        return isGuess(num);
+    }
+
+    private int inputNum(Scanner input) {
+        int inputNum;
+
+        do {
+            inputNum = input.nextInt();
+            if (currentPlayer.addNum(inputNum)) {
+                break;
+            }
+
+            System.out.println("Число должно входить в интервал [1, 100].");
+            System.out.print("Попробуйте еще раз : ");
+            
+        } while (true);
+
+        return inputNum;
     }
 
     private boolean isGuess(int num) {
         String text = num > hiddenNum ? num + " больше"
                 : num + " меньше";
 
-        if (num != hiddenNum) {
-            System.out.println("Число " + text +
-                    " того, что загадал компьютер");
-        } else {
+        if (num == hiddenNum) {
             System.out.println(currentPlayer.getName() + " угадал число " +
                     num + " c " + currentPlayer.getAttempt() + "-й попытки");
+        } else {
+            System.out.println("Число " + text +
+                    " того, что загадал компьютер");
         }
 
         return (num == hiddenNum);
