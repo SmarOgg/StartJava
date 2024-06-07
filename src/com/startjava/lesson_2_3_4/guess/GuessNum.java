@@ -65,7 +65,6 @@ public class GuessNum {
 
             System.out.println("Число должно входить в интервал [1, 100].");
             System.out.print("Попробуйте еще раз : ");
-            
         } while (true);
 
         return inputNum;
@@ -100,7 +99,17 @@ public class GuessNum {
     }
 
     void changePlayer() {
-        currentPlayer = currentPlayer == players[0] ? players[1] : players[0];
+        int position = 0;
+        for (int i = 0; i < players.length; i++) {
+            if (players[i] == currentPlayer) {
+                position = i;
+            }
+        }
+
+        if (position == 3) {
+            position = 0;
+        }
+        currentPlayer = players[position];
     }
 
     private void printNums(Player[] players) {

@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 public class GuessNumTest {
     public static void main(String[] args) {
-        int totalPlayers = 2;
+        int totalPlayers = 3;
 
         GuessNum game = new GuessNum(inputNames(totalPlayers));
 

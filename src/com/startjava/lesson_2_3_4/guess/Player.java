@@ -23,8 +23,10 @@ public class Player {
         boolean isAdded = false;
 
         if (num >= 1 && num <= 100) {
-            nums[attempt++] = num;
-            isAdded = true;
+            if (!findNum(num)) {
+                nums[attempt++] = num;
+                isAdded = true;
+            }
         }
 
         return isAdded;
