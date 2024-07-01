@@ -13,6 +13,8 @@ public class GuessNum {
         for (int i = 0; i < players.length; i++) {
             players[i] = new Player(names[i]);
         }
+
+        shuffle(players);
     }
 
     public void start() {
@@ -71,15 +73,13 @@ public class GuessNum {
     }
 
     private boolean isGuess(int num) {
-        String text = num > hiddenNum ? num + " больше"
-                : num + " меньше";
+        String text = num > hiddenNum ? num + " больше" : num + " меньше";
 
         if (num == hiddenNum) {
             System.out.println(currentPlayer.getName() + " угадал число " +
                     num + " c " + currentPlayer.getAttempt() + "-й попытки");
         } else {
-            System.out.println("Число " + text +
-                    " того, что загадал компьютер");
+            System.out.println("Число " + text + " того, что загадал компьютер");
         }
 
         return (num == hiddenNum);
@@ -102,7 +102,7 @@ public class GuessNum {
         int position = 0;
         for (int i = 0; i < players.length; i++) {
             if (players[i] == currentPlayer) {
-                position = i;
+                position = i + 1;
             }
         }
 
@@ -121,5 +121,22 @@ public class GuessNum {
             }
             System.out.println();
         }
+    }
+
+    private void shuffle(Player[] players) {
+        int totalPlayers = players.length;
+
+        for (int i = totalPlayers - 1; i > 0; i--) {
+            int j = (int) (Math.random() * i);
+
+            Player tempPlayer = players[i];
+            players[i] = players[j];
+            players[j] = tempPlayer;
+        }
+
+        for (Player player : players) {
+            System.out.print(player.getName() + " ");
+        }
+        System.out.println();
     }
 }
